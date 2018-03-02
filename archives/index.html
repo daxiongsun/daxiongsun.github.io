@@ -46,6 +46,37 @@
 
     <div class="post box nocover">
       <em class="date"><span>02</span>Mar</em>
+      <h2 class="post-title"><a href="/2018/03/02/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></h2>
+      <div class="post-content">mysql 数据查询相关
+一、条件过滤
+not 条件和() 条件
+
+1231.() 的用法2.not 的用法where end is null and not (title = &apos;hello&apos;);
+
+子查询作为临时表
+
+1dept_id = (select dept_id from department where name = &apos;loans&apos;)
+
+不相等条件 &lt;&gt; / !=
+范围条件 between
+1234where date between &apos;2005-01-01&apos; and &apos;2005-12-31&apos;;1.between 条件包含前后值，例如上面包含2005-01-01 当天和2005-12-31 当天。2.如果between 前面的值比后面的值大，查询时不会报错而是返回空集。3.字符串也可以当
+      </div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/03/02/mysql数据库基础(二)/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+        <a href="http://yoursite.com/2018/03/02/mysql数据库基础(二)/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="post box nocover">
+      <em class="date"><span>02</span>Mar</em>
       <h2 class="post-title"><a href="/2018/03/02/github博客发布失败/">github博客发布失败</a></h2>
       <div class="post-content">ssh: Could not resolve hostname https: Name or service not knownfatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL Something’s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.htmlError: ssh: Could not resolve hostname https: Name or service not knownfatal: Could not read from remote reposi
       </div>
@@ -203,6 +234,18 @@ Deploy to remote sites1$ hexo
     
     <li>
       <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/02/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></h3>
+        <p>mysql 数据查询相关
+一、条件过滤
+not 条件和() 条件
+
+1231.() 的用法2.not</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
         <h3 class="link-title"><a href="/2018/03/02/github博客发布失败/">github博客发布失败</a></h3>
         <p>ssh: Could not resolve hostname https: Name or ser</p>
       </div>
@@ -240,14 +283,6 @@ Quick Start@Component@Component({
       <div class="text-holder">
         <h3 class="link-title"><a href="/2018/01/05/java interview/">java 面试总结</a></h3>
         <p>数据库设计三范式12341. 范式可以避免数据冗余，减少数据库的存储空间，减轻维护数据完整性的麻烦，</p>
-      </div>
-    </li>
-  
-    
-    <li>
-      <div class="text-holder">
-        <h3 class="link-title"><a href="/2018/01/03/hello-world/">Hello World</a></h3>
-        <p>Welcome to Hexo! This is your very first post. Che</p>
       </div>
     </li>
   
