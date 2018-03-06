@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=932" >
   <meta name="MobileOptimized" content="932" >
   <meta name="generator" content="Hexo">
-  <title>Archives: 2018/1</title>
+  <title>Tag: Java</title>
 
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/awe.css">
@@ -45,74 +45,26 @@
 
 
     <div class="post box nocover">
-      <em class="date"><span>29</span>Jan</em>
-      <h2 class="post-title"><a href="/2018/01/29/Angular基础（一）/">Angular基础一</a></h2>
-      <div class="post-content">一些基础用法
-Quick Start@Component@Component({
-    selector: &apos;app-hello&apos;,   // 用于模版中的标签
-    templateUrl: &apos;./hello.component.html&apos;,  // 模版
-    styleUrls: [&apos;./hello.component.css&apos;] // 模版样式
-})
-*ngFor*ngFor : 在一个列表上进行迭代，为列表的每一个条目生成一个新的标签。
-&lt;li *ngFor=&quot;let name of names&quot;&gt;{{name}}&lt;/li&gt;
-@Input@Input 可以将数据传输给自组件，能够接受输入。
-@Input() name: string;
-&lt;app-hello *ngF
+      <em class="date"><span>07</span>Mar</em>
+      <h2 class="post-title"><a href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></h2>
+      <div class="post-content">
+重要词汇
+
+
+同步和异步
+123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&gt;等待服务器处理-&gt;处理完毕返回(等待期间不做其他事情)异步：请求通过事件出发-&gt;服务器处理-&gt;处理完毕(可同时处理其他任务)同步按顺序执行，异步彼此独立。异步和多线程不是同等关系，异步是最终结果，多线程只是实现异步的一种方式而已，实现异步可以采用多线程或者交给另外的进程来处理。4.优缺点同步可以避免出现死锁，读脏数据的发生。共享某一资源时可以使用同步。异步可以提高效率，但是安全性低。
+
+并发和并行
+123
       </div>
 
       <div class="bottom-panel">
-        <ul class="social-likes" data-url="http://yoursite.com/2018/01/29/Angular基础（一）/">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/03/07/Java高级开发（前言）/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul>
-        <a href="http://yoursite.com/2018/01/29/Angular基础（一）/#disqus_thread" class="btn-comment">Comments</a>
-      </div>
-    </div>
-
-
-
-
-    <div class="post box nocover">
-      <em class="date"><span>05</span>Jan</em>
-      <h2 class="post-title"><a href="/2018/01/05/java interview/">java 面试总结</a></h2>
-      <div class="post-content">数据库设计三范式12341. 范式可以避免数据冗余，减少数据库的存储空间，减轻维护数据完整性的麻烦，但是操作困难，因为需要联系多个表才能得到需要的数据，而且范式越高性能越差。2. 1NF：如果关系模式R的每个关系r的属性都是不可分的数据项，那么就称R是第一个范式模式，（每个属性都是原子项，不可分割）。3. 2NF：首先满足第一范式，其次每个非主属性要完全依赖与候选键，或者是主键。（完全依赖，没有部分依赖）4. 3NF：首先满足第二范式，其次非主属性之间不存在函数依赖。（没有传递依赖）
-数据库事务同步spring中如何使用事务（@Transactional 参数）12345678910111213141516171. @Transactional 注解可以被应用于接口定义和接口方法、类定义和类的 public 方法上。2. @Transactional 注解只能应用到 public 可见度的
-      </div>
-
-      <div class="bottom-panel">
-        <ul class="social-likes" data-url="http://yoursite.com/2018/01/05/java interview/">
-          <li class="facebook" title="like"></li>
-          <li class="twitter" title="twitte"></li>
-          <li class="plusone" title="google"></li>
-        </ul>
-        <a href="http://yoursite.com/2018/01/05/java interview/#disqus_thread" class="btn-comment">Comments</a>
-      </div>
-    </div>
-
-
-
-
-    <div class="post box nocover">
-      <em class="date"><span>03</span>Jan</em>
-      <h2 class="post-title"><a href="/2018/01/03/hello-world/">Hello World</a></h2>
-      <div class="post-content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy to remote sites1$ hexo
-      </div>
-
-      <div class="bottom-panel">
-        <ul class="social-likes" data-url="http://yoursite.com/2018/01/03/hello-world/">
-          <li class="facebook" title="like"></li>
-          <li class="twitter" title="twitte"></li>
-          <li class="plusone" title="google"></li>
-        </ul>
-        <a href="http://yoursite.com/2018/01/03/hello-world/#disqus_thread" class="btn-comment">Comments</a>
+        <a href="http://yoursite.com/2018/03/07/Java高级开发（前言）/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
 
