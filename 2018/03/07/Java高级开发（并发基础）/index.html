@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta name="viewport" content="width=932" >
+  <meta name="MobileOptimized" content="932" >
+  <meta name="generator" content="Hexo">
+  <title>Java高级开发（并发基础）</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/awe.css">
+  <link rel="stylesheet" type="text/css" href="/css/social-likes.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/imgLiquid-min.js"></script>
+  <script src="/js/social-likes.min.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    
+
+<div class="box profile">
+  <div class="heading" style="background: #3e5354 url(/images/bg-heading.jpg) no-repeat;">
+    <div class="profile-img">
+      <a href="//kywk.github.io/"><img src="/images/img-profile.jpg" width="154" height="150" alt="image description"></a>
+    </div>
+    <strong class="user"><a href="/">坚守信仰</a></strong>
+    <span class="locate">beijing</span>
+  </div>
+  <div class="setting">
+    <a href="//kywk.github.io/" class="btn-profile">Profile</a>
+    <a href="/" class="btn-photos">Photos</a>
+    <a href="/" class="btn-follow">Follow me</a>
+  </div>
+</div>
+
+    
+<div class="two-columns post-page">
+  <div class="content">
+
+    <div class="post box nocover">
+      <em class="date"><span>07</span>Mar</em>
+      <h2 class="post-title"><a href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a></h2>
+      <div class="post-content"><h1 id="线程基础操作"><a href="#线程基础操作" class="headerlink" title="线程基础操作"></a>线程基础操作</h1><p>new  start  runnable  terminated  blocked  waiting  time_waiting</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_165346.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:6vTtr6xLPuF4dvjw3yBjUTHu3Tw" alt=""></p>
+<h2 id="1-终止线程（废除）"><a href="#1-终止线程（废除）" class="headerlink" title="1.终止线程（废除）"></a>1.终止线程（废除）</h2><p>Thread.stop() // 不推荐使用，线程不安全</p>
+<h2 id="2-中断线程"><a href="#2-中断线程" class="headerlink" title="2.中断线程"></a>2.中断线程</h2><p>(1)void Thread.interrupt()    // 中断线程<br>(2)boolean Thread.isInterrupted()  // 判断是否中断线程，不会清除当前中断状态<br>(3)boolean Thread.interrupted()  // 判断线程是否被中断，并清除当前中断状态<br>(4)一个线程可以调用另一个线程的interrupt()方法来试图中断另一个线程的运行，也可以中断自己，如果线程没有运行，则interrupt()不会有任何影响，interrupt()只是做一个标记，需要线程自己来处理是否停止。<br>(5)如果被中断的线程处于wait(),join(),sleep()状态，那么该线程会立即接受一个InterruptedException异常，该异常会自动清除线程的中断状态。</p>
+<h2 id="3-挂起-suspend-和继续执行-resume-线程-废除"><a href="#3-挂起-suspend-和继续执行-resume-线程-废除" class="headerlink" title="3.挂起(suspend)和继续执行(resume)线程(废除)"></a>3.挂起(suspend)和继续执行(resume)线程(废除)</h2><p>线程suspend()之后才能执行resume(),否则会导致死锁</p>
+<h2 id="4-yield-谦让"><a href="#4-yield-谦让" class="headerlink" title="4.yield() 谦让"></a>4.yield() 谦让</h2><p>使线程从运行状态转化为就绪状态，也就是将资源释放出来，但是释放完后我也会和其它线程公平竞争释放出来的资源，这时有可能别的线程抢到了资源，也有可能自己抢到了资源。</p>
+<h2 id="5-join"><a href="#5-join" class="headerlink" title="5.join()"></a>5.join()</h2><p>将一个线程加入到其他线程一起执行。也就是如果一个线程调用 join() 方法，那么其他线程会等待该线程执行完然后在一起执行后面的操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public final void join() throws InterruptedException</span><br><span class="line">public final synchronized void join(long millis) throws InterruptedException</span><br></pre></td></tr></table></figure></p>
+<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class JoinMain&#123;</span><br><span class="line">    public volatile static int i = 0;</span><br><span class="line">    public static class AddThread extends Thread&#123;</span><br><span class="line">        public void run()&#123;</span><br><span class="line">            for(i = 0;i &lt; 10000000;i++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        AddThread at = new AddThread();</span><br><span class="line">        at.start();</span><br><span class="line">        at.join();</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">这里at.join() 方法说明：当前主线程需要等待at线程执行完成后at线程加入到主线程一起执行后面的System.out.println(i); 语句。</span><br><span class="line">join的本质：</span><br><span class="line">while(isAlive())&#123;</span><br><span class="line">    wait(0);</span><br><span class="line">&#125;</span><br><span class="line">线程执行完毕后系统会调用 notifyAll(),说明：不要在Thread实例上使用wait() 和 notify()方法。</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-守护线程-Daemon"><a href="#6-守护线程-Daemon" class="headerlink" title="6.守护线程(Daemon)"></a>6.守护线程(Daemon)</h2><p>在后台默默地完成一些系统性的服务，比如垃圾回收线程，JIT线程就可以理解为守护线程。在一个Java应用内，只有守护线程时，Java虚拟机就会自然退出。</p>
+<h2 id="7-线程优先级"><a href="#7-线程优先级" class="headerlink" title="7.线程优先级"></a>7.线程优先级</h2><h2 id="8-wait-notify"><a href="#8-wait-notify" class="headerlink" title="8.wait() / notify()"></a>8.wait() / notify()</h2><p>wait() 等待直到被通知。<br>wait() 和 notify() 是java.lang.Object 上的方法，并不直接来源于Thread.<br>这两个方法都必须在该线程获取锁的情况下才能使用，也就是必须从同步环境内调用wait(),notify(),notifyAll()方法。<br>wait之后，该线程会立即释放同步Object的锁，并转入阻塞状态。<br>一个notify只能随机唤醒一个wait的线程，而notifyAll可以唤醒所有。<br><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_175919.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:EXR0k6D_zx_LL_kK0dS7y3Ujoas" alt=""></p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_175948.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:Yj4rnaBhtqoWrMHr8kdH-UcfsVk" alt=""></p>
+</div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="/2018/03/07/Java高级开发（并发基础）/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="widgetarea">
+
+    
+    
+<div class="tags widget">
+  <h3 class="title">Tags</h3>
+  <div style="text-align:center">
+    
+    <a class="button" href="/tags/Java/">Java</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Java/" style="font-size: 12px;">Java</a></div>
+
+    
+
+    
+      
+
+<ul class="widget blogroll">
+  <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/java-image/">java image</a></h3>
+        <p>Java 架构师总揽
+
+</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></h3>
+        <p>
+重要词汇
+
+
+同步和异步
+123456789101112131415161.同步（synchron</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a></h3>
+        <p>线程基础操作new  start  runnable  terminated  blocked  w</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/02/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></h3>
+        <p>mysql 数据查询相关
+一、条件过滤
+not 条件和() 条件
+
+1231.() 的用法2.not</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/02/github博客发布失败/">github博客发布失败</a></h3>
+        <p>ssh: Could not resolve hostname https: Name or ser</p>
+      </div>
+    </li>
+  
+</ul>
+
+
+    
+
+  </div>
+</div>
+
+
+  </div>
+  
+<div class="footer">
+  <div class="container">
+    <a href="//github.com/kywk/hexo-theme-awe">AWE for hexo</a> inspired by <a href="http://goo.gl/H8OMRE">Awesome UI Kit</a>,
+    ported by <a href="//kywk.github.io/">MooCow (Aka. kywk)</a>.
+    
+    &copy; 2018 John Doe All Rights Reserved
+    
+  </div>
+</div>
+
+  <!-- disqus -->
+
+
+
+<script>
+$(document).ready(function() {
+  $('.imgLiquid').imgLiquid({fill:true, fadeInTime:500});
+});
+</script>
+
+
+<!-- fancybox -->
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+</body>
+</html>
