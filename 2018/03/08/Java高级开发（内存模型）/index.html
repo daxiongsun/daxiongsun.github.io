@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta name="viewport" content="width=932" >
+  <meta name="MobileOptimized" content="932" >
+  <meta name="generator" content="Hexo">
+  <title>Java高级开发（内存模型）</title>
+
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/awe.css">
+  <link rel="stylesheet" type="text/css" href="/css/social-likes.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/imgLiquid-min.js"></script>
+  <script src="/js/social-likes.min.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    
+
+<div class="box profile">
+  <div class="heading" style="background: #3e5354 url(/images/bg-heading.jpg) no-repeat;">
+    <div class="profile-img">
+      <a href="//kywk.github.io/"><img src="/images/img-profile.jpg" width="154" height="150" alt="image description"></a>
+    </div>
+    <strong class="user"><a href="/">坚守信仰</a></strong>
+    <span class="locate">beijing</span>
+  </div>
+  <div class="setting">
+    <a href="//kywk.github.io/" class="btn-profile">Profile</a>
+    <a href="/" class="btn-photos">Photos</a>
+    <a href="/" class="btn-follow">Follow me</a>
+  </div>
+</div>
+
+    
+<div class="two-columns post-page">
+  <div class="content">
+
+    <div class="post box nocover">
+      <em class="date"><span>08</span>Mar</em>
+      <h2 class="post-title"><a href="/2018/03/08/Java高级开发（内存模型）/">Java高级开发（内存模型）</a></h2>
+      <div class="post-content"><h1 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h1><p>内存空间(Runtime Data Area)按照是否线程共享分为两块：</p>
+<h2 id="线程共享"><a href="#线程共享" class="headerlink" title="线程共享"></a>线程共享</h2><p>方法区（Method Area）和堆（Heap）</p>
+<h2 id="线程独享"><a href="#线程独享" class="headerlink" title="线程独享"></a>线程独享</h2><p>Java虚拟机栈（Java Stack）、本地方法栈（Native Method Stack）、PC寄存器（Program Counter Register）<br><img src="http://p57oex9rc.bkt.clouddn.com/20170228094406473.jpg?e=1520523037&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:4xzDPU44VzqEJ55ZhVMQaObPii4" alt=""></p>
+<h3 id="Java-Stack"><a href="#Java-Stack" class="headerlink" title="Java Stack"></a>Java Stack</h3><p>每个线程有一个私有栈，随着线程的创建而创建，栈中存放一个“栈桢”的东西，每个方法会创建一个“栈桢”，“栈桢”中存放了局部变量、操作数栈、方法出口等信息。</p>
+<h3 id="Native-Method-Stack"><a href="#Native-Method-Stack" class="headerlink" title="Native Method Stack"></a>Native Method Stack</h3><p>Native方法相关</p>
+<h3 id="Program-Counter-Register"><a href="#Program-Counter-Register" class="headerlink" title="Program Counter Register"></a>Program Counter Register</h3><p>PC寄存器（程序计数器），JVM支持多个线程同时运行，每个线程都有自己的程序计数器，</p>
+<h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><p>堆内存是JVM所有线程共享的部分，在虚拟机启动的时候就已经创建。所有的对象和数组都在堆上进行分配。这部分空间可通过 GC进行回收。</p>
+<h2 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h2><p>原子性指一个操作是不可中断的，即使是在多个线程并发执行的时候，一个操作一旦开始，就不会被其它线程干扰。</p>
+<h2 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h2><p>在并发时，程序的执行可能会出现乱序，指令会出现重排。</p>
+<h2 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h2><p>可见性是当一个线程修改了某一个共享变量的值时，其他线程是否立即直到这个修改。</p>
+<h1 id="Happen-Before规则"><a href="#Happen-Before规则" class="headerlink" title="Happen-Before规则"></a>Happen-Before规则</h1><h2 id="程序顺序原则：一个线程内保证语义的串行性"><a href="#程序顺序原则：一个线程内保证语义的串行性" class="headerlink" title="程序顺序原则：一个线程内保证语义的串行性"></a>程序顺序原则：一个线程内保证语义的串行性</h2><h2 id="volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。"><a href="#volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。" class="headerlink" title="volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。"></a>volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。</h2><h2 id="锁规则：解锁放生在加锁之后"><a href="#锁规则：解锁放生在加锁之后" class="headerlink" title="锁规则：解锁放生在加锁之后"></a>锁规则：解锁放生在加锁之后</h2><h2 id="传递性：A先于B，B先于C，A必然先于C"><a href="#传递性：A先于B，B先于C，A必然先于C" class="headerlink" title="传递性：A先于B，B先于C，A必然先于C"></a>传递性：A先于B，B先于C，A必然先于C</h2><h2 id="线程的start-方法先于它的每一个动作"><a href="#线程的start-方法先于它的每一个动作" class="headerlink" title="线程的start()方法先于它的每一个动作"></a>线程的start()方法先于它的每一个动作</h2><h2 id="线程的所有操作先于线程的终结-Thread-join"><a href="#线程的所有操作先于线程的终结-Thread-join" class="headerlink" title="线程的所有操作先于线程的终结(Thread.join())"></a>线程的所有操作先于线程的终结(Thread.join())</h2><h2 id="线程的中断-interrupt-只是修改中断标识-先于被中断线程的代码"><a href="#线程的中断-interrupt-只是修改中断标识-先于被中断线程的代码" class="headerlink" title="线程的中断(interrupt()只是修改中断标识) 先于被中断线程的代码"></a>线程的中断(interrupt()只是修改中断标识) 先于被中断线程的代码</h2><h2 id="对象的构造函数执行结束先于finalize-方法"><a href="#对象的构造函数执行结束先于finalize-方法" class="headerlink" title="对象的构造函数执行结束先于finalize()方法"></a>对象的构造函数执行结束先于finalize()方法</h2></div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="/2018/03/08/Java高级开发（内存模型）/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="widgetarea">
+
+    
+    
+<div class="tags widget">
+  <h3 class="title">Tags</h3>
+  <div style="text-align:center">
+    
+    <a class="button" href="/tags/Java/">Java</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Java/" style="font-size: 12px;">Java</a></div>
+
+    
+
+    
+      
+
+<ul class="widget blogroll">
+  <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/08/Java高级开发（内存模型）/">Java高级开发（内存模型）</a></h3>
+        <p>内存模型内存空间(Runtime Data Area)按照是否线程共享分为两块：
+线程共享方法区（M</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a></h3>
+        <p>线程基础操作new  start  runnable  terminated  blocked  w</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/java-image/">java image</a></h3>
+        <p>Java 架构师总揽
+
+</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></h3>
+        <p>
+重要词汇
+
+
+同步和异步
+123456789101112131415161.同步（synchron</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/03/02/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></h3>
+        <p>mysql 数据查询相关
+一、条件过滤
+not 条件和() 条件
+
+1231.() 的用法2.not</p>
+      </div>
+    </li>
+  
+</ul>
+
+
+    
+
+  </div>
+</div>
+
+
+  </div>
+  
+<div class="footer">
+  <div class="container">
+    <a href="//github.com/kywk/hexo-theme-awe">AWE for hexo</a> inspired by <a href="http://goo.gl/H8OMRE">Awesome UI Kit</a>,
+    ported by <a href="//kywk.github.io/">MooCow (Aka. kywk)</a>.
+    
+    &copy; 2018 John Doe All Rights Reserved
+    
+  </div>
+</div>
+
+  <!-- disqus -->
+
+
+
+<script>
+$(document).ready(function() {
+  $('.imgLiquid').imgLiquid({fill:true, fadeInTime:500});
+});
+</script>
+
+
+<!-- fancybox -->
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+</body>
+</html>
