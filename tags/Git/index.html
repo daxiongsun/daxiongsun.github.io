@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=932" >
   <meta name="MobileOptimized" content="932" >
   <meta name="generator" content="Hexo">
-  <title>Angular基础一</title>
+  <title>Tag: Git</title>
 
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/awe.css">
@@ -38,47 +38,70 @@
 </div>
 
     
-<div class="two-columns post-page">
+<div class="two-columns">
   <div class="content">
 
-    <div class="post box nocover">
-      <em class="date"><span>29</span>Jan</em>
-      <h2 class="post-title"><a href="/2018/01/29/Angular基础（一）/">Angular基础一</a></h2>
-      <div class="post-content"><p>一些基础用法</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h3><pre><code>@Component({
-    selector: &apos;app-hello&apos;,   // 用于模版中的标签
-    templateUrl: &apos;./hello.component.html&apos;,  // 模版
-    styleUrls: [&apos;./hello.component.css&apos;] // 模版样式
-})
-</code></pre><h3 id="ngFor"><a href="#ngFor" class="headerlink" title="*ngFor"></a>*ngFor</h3><pre><code>*ngFor : 在一个列表上进行迭代，为列表的每一个条目生成一个新的标签。
-&lt;li *ngFor=&quot;let name of names&quot;&gt;{{name}}&lt;/li&gt;
-</code></pre><h3 id="Input"><a href="#Input" class="headerlink" title="@Input"></a>@Input</h3><pre><code>@Input 可以将数据传输给自组件，能够接受输入。
-@Input() name: string;
-&lt;app-hello *ngFor=&quot;let myname of names&quot; [name] = myname&gt;&lt;/app-hello&gt;
-</code></pre><h3 id="NgModule"><a href="#NgModule" class="headerlink" title="@NgModule"></a>@NgModule</h3><pre><code>在创建组件时必须把组件放入@NgModule的declarations中。
-@NgModule({
-declarations: [
-  AppComponent,
-  HelloComponent
-]    
-})
-</code></pre></div>
+
+
+
+    <div class="post box">
+      <div class="coverimg imgLiquid">
+        <img src="http://p57oex9rc.bkt.clouddn.com/2018-03-11_145936.png?e=1520755370&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:YXjVWLczh6jbKAjlPx1MNmdYTwM">
+        <em class="date"><span>11</span>Mar</em>
+        <h2 class="post-title"><a href="/2018/03/11/gerrit_with_git/">gerrit with git</a></h2>
+      </div>
+      <div class="post-content">
+安装git工具
+配置git
+生成SSH Keys
+向Gerrit添加SSH keys
+Git于Gerrit配合使用
+
+###一、 安装git工具
+1.Linux 
+$ sudo yum install git 或者 $ sudo apt-get install git
+2.Windows
+Git官网下载.exe 文件安装即可
+二、配置git1.查看配置变量
+$ git config -l
+cor</div>
 
       <div class="bottom-panel">
-        <ul class="social-likes" data-url="/2018/01/29/Angular基础（一）/">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/03/11/gerrit_with_git/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul>
+        <a href="http://yoursite.com/2018/03/11/gerrit_with_git/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
+
     
+
+<ul class="paging box">
+  
+  <span class="page-number">Page 1 of 1</span>
+  
+</ul>
+
   </div>
 
   <div class="widgetarea">
 
     
     
+<div class="tags widget">
+  <h3 class="title">Tags</h3>
+  <div style="text-align:center">
+    
+    <a class="button" href="/tags/Java/">Java</a>
+    
+    <a class="button" href="/tags/Git/">Git</a>
+    
+  </div>
+  
+</div>
+
 
 <div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/Java/" style="font-size: 24px;">Java</a></div>
 
