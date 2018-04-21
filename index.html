@@ -51,8 +51,6 @@
 title: hexo 博客发布
 date: 2018-04-21 18:38:42
 tags: blog
-–
-
 1.进入E:/GitHub/node/Install/blog/source/_posts 文件夹下书写博客,.md文件
 2.打开git命令行：进入E:/GitHub/node/Install/blog/hexo g : 重新发布博客hexo d : 发送博客到远程仓库hexo clean : 清除
 3.创建带有图片的博客hexo new “hello”会在_posts 文件下生成 hello.md 文件和 hello 文件夹（图片放入其中，如放入java.jpg），在md文件中引用
@@ -80,14 +78,12 @@ tags: blog
       <div class="post-content">
 title: Resilient Distributed Dataset
 date: 2018-04-21 18:38:42
-tags: Spark
-–
-Resilient Distributed Dataset1.弹性分布式数据集,应用于多台机子RDD
+tags: SparkResilient Distributed Dataset1.弹性分布式数据集,应用于多台机子RDD
 (1)A list of partitions(在一个节点中连续的数据片,一个partition 只能在一台机子中)RDD 存在副本,副本中partition也是多个数据切分,数据本地性partition : 是具体的概念,指在某个节点中一片连续的数据.RDD 是抽象的
 
 (2)A function for compution each split从数据来看,不出意外一个partition 就是一个split从计算来看,split map算子: map, filter,并行计算
 
-(3)A list of dependencies on
+(3)A list of dependencies on ot
       </div>
 
       <div class="bottom-panel">

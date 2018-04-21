@@ -47,9 +47,7 @@
       <div class="post-content"><hr>
 <p>title: Resilient Distributed Dataset</p>
 <p>date: 2018-04-21 18:38:42</p>
-<p>tags: Spark</p>
-<p>–</p>
-<h1 id="Resilient-Distributed-Dataset"><a href="#Resilient-Distributed-Dataset" class="headerlink" title="Resilient Distributed Dataset"></a>Resilient Distributed Dataset</h1><h2 id="1-弹性分布式数据集-应用于多台机子"><a href="#1-弹性分布式数据集-应用于多台机子" class="headerlink" title="1.弹性分布式数据集,应用于多台机子"></a>1.弹性分布式数据集,应用于多台机子</h2><h2 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h2><ul>
+<h2 id="tags-Spark"><a href="#tags-Spark" class="headerlink" title="tags: Spark"></a>tags: Spark</h2><h1 id="Resilient-Distributed-Dataset"><a href="#Resilient-Distributed-Dataset" class="headerlink" title="Resilient Distributed Dataset"></a>Resilient Distributed Dataset</h1><h2 id="1-弹性分布式数据集-应用于多台机子"><a href="#1-弹性分布式数据集-应用于多台机子" class="headerlink" title="1.弹性分布式数据集,应用于多台机子"></a>1.弹性分布式数据集,应用于多台机子</h2><h2 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h2><ul>
 <li><p>(1)A list of partitions(在一个节点中连续的数据片,一个partition 只能在一台机子中)<br>RDD 存在副本,副本中partition也是多个<br>数据切分,数据本地性<br>partition : 是具体的概念,指在某个节点中一片连续的数据.<br>RDD 是抽象的</p>
 </li>
 <li><p>(2)A function for compution each split<br>从数据来看,不出意外一个partition 就是一个split<br>从计算来看,split map<br>算子: map, filter,<br>并行计算</p>
