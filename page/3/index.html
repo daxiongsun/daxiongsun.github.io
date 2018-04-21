@@ -3,23 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java高级开发（前言） | Daxiong&#39;s blogs</title>
+  <title>Daxiong&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta name="keywords" content="Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Java高级开发（前言）">
-<meta property="og:url" content="http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Daxiong&#39;s blogs">
+<meta property="og:url" content="http://daxiongit.github.io/page/3/index.html">
 <meta property="og:site_name" content="Daxiong&#39;s blogs">
-<meta property="og:description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001831.png?e=1520414870&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:PvAESuOfzOFdSpWu0hWYfxiTD38">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001842.png?e=1520414871&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:JRt9arXnarGxlyVGq82AE4G_QUs">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001854.png?e=1520414871&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:N3R2bz2lznk1Y6-up5kOKmSrx7I">
-<meta property="og:updated_time" content="2018-03-07T08:35:47.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java高级开发（前言）">
-<meta name="twitter:description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta name="twitter:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001831.png?e=1520414870&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:PvAESuOfzOFdSpWu0hWYfxiTD38">
+<meta name="twitter:title" content="Daxiong&#39;s blogs">
   
     <link rel="alternative" href="/atom.xml" title="Daxiong&#39;s blogs" type="application/atom+xml">
   
@@ -33,6 +24,9 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
+    
+    
+  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -44,8 +38,8 @@
           rootUrl: '/',
           fancybox: true,
           animate: true,
-          isHome: false,
-          isPost: true,
+          isHome: true,
+          isPost: false,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -233,7 +227,333 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Java高级开发（前言）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
+  
+    <article id="post-gerrit_with_git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/11/gerrit_with_git/" class="article-date">
+      <time datetime="2018-03-11T07:18:40.000Z" itemprop="datePublished">2018-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/11/gerrit_with_git/">gerrit with git</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li>安装git工具</li>
+<li>配置git</li>
+<li>生成SSH Keys</li>
+<li>向Gerrit添加SSH keys</li>
+<li>Git于Gerrit配合使用</li>
+</ul>
+<p>###一、 安装git工具</p>
+<pre><code>1.Linux 
+$ sudo yum install git 或者 $ sudo apt-get install git
+2.Windows
+Git官网下载.exe 文件安装即可
+</code></pre><h3 id="二、配置git"><a href="#二、配置git" class="headerlink" title="二、配置git"></a>二、配置git</h3><pre><code>1.查看配置变量
+$ git config -l
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslcainfo=E:/Development tool/Git/git/Git/mingw64/ssl/certs/ca-bundle.crt
+credential.helper=manager
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+user.name=daxiongit
+user.email=daxiongit@qq.com
+usr.email=daxiongit@qq.com
+core.editor=emacs
+core.autocrlf=false
+
+2.配置用户名和邮箱
+$ git config --global user.name &quot;daxiongit&quot;
+$ git config --global user.email &quot;daxiongit@qq.com&quot;
+</code></pre><h3 id="三、生成-SSH-keys"><a href="#三、生成-SSH-keys" class="headerlink" title="三、生成 SSH keys"></a>三、生成 SSH keys</h3><pre><code>1.SSH keys
+SSH 表示Secure Shell 或有时用于从远程计算机安全访问网络服务的Secure Socket Shell 协议，可以设置SSH密钥用来在计算机和Gerrit之间提供可靠的安全连接。
+2.SSH 密钥文件位置
+$ ls ~/.ssh/
+id_rsa  id_rsa.pub
+### id_rsa: 私有密钥
+### id_rsa.pub: 公有密钥
+3.生成新的SSH密钥
+$ ssh-keygen -t rsa -C &quot;daxiongit@qq.com&quot;
+</code></pre><h3 id="四、向Gerrit-添加SSH密钥"><a href="#四、向Gerrit-添加SSH密钥" class="headerlink" title="四、向Gerrit 添加SSH密钥"></a>四、向Gerrit 添加SSH密钥</h3><p>1.复制id_rsa.pub 内容并复制下来</p>
+<p>2.注册Gerrit 账户</p>
+<p>[<a href="https://wikitech.wikimedia.org/wiki/Special:CreateAccount" target="_blank" rel="noopener">https://wikitech.wikimedia.org/wiki/Special:CreateAccount</a>]</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-11_145936.png?e=1520755370&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:YXjVWLczh6jbKAjlPx1MNmdYTwM" alt=""></p>
+<p>3.登录Gerrit</p>
+<p>[<a href="http://gerrit.wikimedia.org/r/login/%23%2Fq%2Fstatus%3Aopen" target="_blank" rel="noopener">http://gerrit.wikimedia.org/r/login/%23%2Fq%2Fstatus%3Aopen</a>]</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-11_150007.png?e=1520755369&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:VuZTO91UVtPhvvKzesVdbXE-exc" alt=""></p>
+<p>4.添加 SSH Public Keys</p>
+<p>接着在右上角，点击您的用户名，然后选择设置(<strong>Settings</strong>)选项。在这里，我们创建了一个名为<code>Daxiongit</code>的帐户，以用来演示<strong>Gerrit</strong>的使用和演示。</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-11_150059.png?e=1520755370&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:DyzevhZ42b7D_6eg1OfTQ4qDWHQ" alt=""></p>
+<p>###五、Gerrit配合Git使用</p>
+<pre><code>1.打开Git Bash获取 ssh-agent
+$ eval &apos;ssh-agent&apos;
+2.将ssh密钥添加到ssh-agent
+$ ssh-add ~/.ssh/id_rsa
+！！！此时出现错误：
+$ ssh-add ~/.ssh/id_rsa
+Could not open a connection to your authentication agent.
+！！！解决方案：
+$ ssh-agent bash
+$ ssh-add ~/.ssh/id_rsa
+</code></pre><p>参考：【<a href="https://www.yiibai.com/gerrit/gerrit_overview.html】" target="_blank" rel="noopener">https://www.yiibai.com/gerrit/gerrit_overview.html】</a></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java高级开发（内存模型）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/08/Java高级开发（内存模型）/" class="article-date">
+      <time datetime="2018-03-08T11:45:42.000Z" itemprop="datePublished">2018-03-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/08/Java高级开发（内存模型）/">Java高级开发（内存模型）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h1><p>内存空间(Runtime Data Area)按照是否线程共享分为两块：</p>
+<h2 id="线程共享"><a href="#线程共享" class="headerlink" title="线程共享"></a>线程共享</h2><p>方法区（Method Area）和堆（Heap）</p>
+<h2 id="线程独享"><a href="#线程独享" class="headerlink" title="线程独享"></a>线程独享</h2><p>Java虚拟机栈（Java Stack）、本地方法栈（Native Method Stack）、PC寄存器（Program Counter Register）<br><img src="http://p57oex9rc.bkt.clouddn.com/20170228094406473.jpg?e=1520523037&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:4xzDPU44VzqEJ55ZhVMQaObPii4" alt=""></p>
+<h3 id="Java-Stack"><a href="#Java-Stack" class="headerlink" title="Java Stack"></a>Java Stack</h3><p>每个线程有一个私有栈，随着线程的创建而创建，栈中存放一个“栈桢”的东西，每个方法会创建一个“栈桢”，“栈桢”中存放了局部变量、操作数栈、方法出口等信息。</p>
+<h3 id="Native-Method-Stack"><a href="#Native-Method-Stack" class="headerlink" title="Native Method Stack"></a>Native Method Stack</h3><p>Native方法相关</p>
+<h3 id="Program-Counter-Register"><a href="#Program-Counter-Register" class="headerlink" title="Program Counter Register"></a>Program Counter Register</h3><p>PC寄存器（程序计数器），JVM支持多个线程同时运行，每个线程都有自己的程序计数器，</p>
+<h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><p>堆内存是JVM所有线程共享的部分，在虚拟机启动的时候就已经创建。所有的对象和数组都在堆上进行分配。这部分空间可通过 GC进行回收。</p>
+<h2 id="原子性"><a href="#原子性" class="headerlink" title="原子性"></a>原子性</h2><p>原子性指一个操作是不可中断的，即使是在多个线程并发执行的时候，一个操作一旦开始，就不会被其它线程干扰。</p>
+<h2 id="有序性"><a href="#有序性" class="headerlink" title="有序性"></a>有序性</h2><p>在并发时，程序的执行可能会出现乱序，指令会出现重排。</p>
+<h2 id="可见性"><a href="#可见性" class="headerlink" title="可见性"></a>可见性</h2><p>可见性是当一个线程修改了某一个共享变量的值时，其他线程是否立即直到这个修改。</p>
+<h1 id="Happen-Before规则"><a href="#Happen-Before规则" class="headerlink" title="Happen-Before规则"></a>Happen-Before规则</h1><h2 id="程序顺序原则：一个线程内保证语义的串行性"><a href="#程序顺序原则：一个线程内保证语义的串行性" class="headerlink" title="程序顺序原则：一个线程内保证语义的串行性"></a>程序顺序原则：一个线程内保证语义的串行性</h2><h2 id="volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。"><a href="#volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。" class="headerlink" title="volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。"></a>volatile规则：volatile变量的写发生在读之前，保证了volatile变量的可见性。</h2><h2 id="锁规则：解锁放生在加锁之后"><a href="#锁规则：解锁放生在加锁之后" class="headerlink" title="锁规则：解锁放生在加锁之后"></a>锁规则：解锁放生在加锁之后</h2><h2 id="传递性：A先于B，B先于C，A必然先于C"><a href="#传递性：A先于B，B先于C，A必然先于C" class="headerlink" title="传递性：A先于B，B先于C，A必然先于C"></a>传递性：A先于B，B先于C，A必然先于C</h2><h2 id="线程的start-方法先于它的每一个动作"><a href="#线程的start-方法先于它的每一个动作" class="headerlink" title="线程的start()方法先于它的每一个动作"></a>线程的start()方法先于它的每一个动作</h2><h2 id="线程的所有操作先于线程的终结-Thread-join"><a href="#线程的所有操作先于线程的终结-Thread-join" class="headerlink" title="线程的所有操作先于线程的终结(Thread.join())"></a>线程的所有操作先于线程的终结(Thread.join())</h2><h2 id="线程的中断-interrupt-只是修改中断标识-先于被中断线程的代码"><a href="#线程的中断-interrupt-只是修改中断标识-先于被中断线程的代码" class="headerlink" title="线程的中断(interrupt()只是修改中断标识) 先于被中断线程的代码"></a>线程的中断(interrupt()只是修改中断标识) 先于被中断线程的代码</h2><h2 id="对象的构造函数执行结束先于finalize-方法"><a href="#对象的构造函数执行结束先于finalize-方法" class="headerlink" title="对象的构造函数执行结束先于finalize()方法"></a>对象的构造函数执行结束先于finalize()方法</h2>
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java高级开发（并发基础）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/07/Java高级开发（并发基础）/" class="article-date">
+      <time datetime="2018-03-07T10:03:42.000Z" itemprop="datePublished">2018-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="线程基础操作"><a href="#线程基础操作" class="headerlink" title="线程基础操作"></a>线程基础操作</h1><p>new  start  runnable  terminated  blocked  waiting  time_waiting</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_165346.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:6vTtr6xLPuF4dvjw3yBjUTHu3Tw" alt=""></p>
+<h2 id="1-终止线程（废除）"><a href="#1-终止线程（废除）" class="headerlink" title="1.终止线程（废除）"></a>1.终止线程（废除）</h2><p>Thread.stop() // 不推荐使用，线程不安全</p>
+<h2 id="2-中断线程"><a href="#2-中断线程" class="headerlink" title="2.中断线程"></a>2.中断线程</h2><p>(1)void Thread.interrupt()    // 中断线程<br>(2)boolean Thread.isInterrupted()  // 判断是否中断线程，不会清除当前中断状态<br>(3)boolean Thread.interrupted()  // 判断线程是否被中断，并清除当前中断状态<br>(4)一个线程可以调用另一个线程的interrupt()方法来试图中断另一个线程的运行，也可以中断自己，如果线程没有运行，则interrupt()不会有任何影响，interrupt()只是做一个标记，需要线程自己来处理是否停止。<br>(5)如果被中断的线程处于wait(),join(),sleep()状态，那么该线程会立即接受一个InterruptedException异常，该异常会自动清除线程的中断状态。</p>
+<h2 id="3-挂起-suspend-和继续执行-resume-线程-废除"><a href="#3-挂起-suspend-和继续执行-resume-线程-废除" class="headerlink" title="3.挂起(suspend)和继续执行(resume)线程(废除)"></a>3.挂起(suspend)和继续执行(resume)线程(废除)</h2><p>线程suspend()之后才能执行resume(),否则会导致死锁</p>
+<h2 id="4-yield-谦让"><a href="#4-yield-谦让" class="headerlink" title="4.yield() 谦让"></a>4.yield() 谦让</h2><p>使线程从运行状态转化为就绪状态，也就是将资源释放出来，但是释放完后我也会和其它线程公平竞争释放出来的资源，这时有可能别的线程抢到了资源，也有可能自己抢到了资源。</p>
+<h2 id="5-join"><a href="#5-join" class="headerlink" title="5.join()"></a>5.join()</h2><p>将一个线程加入到其他线程一起执行。也就是如果一个线程调用 join() 方法，那么其他线程会等待该线程执行完然后在一起执行后面的操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public final void join() throws InterruptedException</span><br><span class="line">public final synchronized void join(long millis) throws InterruptedException</span><br></pre></td></tr></table></figure></p>
+<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class JoinMain&#123;</span><br><span class="line">    public volatile static int i = 0;</span><br><span class="line">    public static class AddThread extends Thread&#123;</span><br><span class="line">        public void run()&#123;</span><br><span class="line">            for(i = 0;i &lt; 10000000;i++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        AddThread at = new AddThread();</span><br><span class="line">        at.start();</span><br><span class="line">        at.join();</span><br><span class="line">        System.out.println(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">这里at.join() 方法说明：当前主线程需要等待at线程执行完成后at线程加入到主线程一起执行后面的System.out.println(i); 语句。</span><br><span class="line">join的本质：</span><br><span class="line">while(isAlive())&#123;</span><br><span class="line">    wait(0);</span><br><span class="line">&#125;</span><br><span class="line">线程执行完毕后系统会调用 notifyAll(),说明：不要在Thread实例上使用wait() 和 notify()方法。</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-守护线程-Daemon"><a href="#6-守护线程-Daemon" class="headerlink" title="6.守护线程(Daemon)"></a>6.守护线程(Daemon)</h2><p>在后台默默地完成一些系统性的服务，比如垃圾回收线程，JIT线程就可以理解为守护线程。在一个Java应用内，只有守护线程时，Java虚拟机就会自然退出。</p>
+<h2 id="7-线程优先级"><a href="#7-线程优先级" class="headerlink" title="7.线程优先级"></a>7.线程优先级</h2><h2 id="8-wait-notify"><a href="#8-wait-notify" class="headerlink" title="8.wait() / notify()"></a>8.wait() / notify()</h2><p>wait() 等待直到被通知。<br>wait() 和 notify() 是java.lang.Object 上的方法，并不直接来源于Thread.<br>这两个方法都必须在该线程获取锁的情况下才能使用，也就是必须从同步环境内调用wait(),notify(),notifyAll()方法。<br>wait之后，该线程会立即释放同步Object的锁，并转入阻塞状态。<br>一个notify只能随机唤醒一个wait的线程，而notifyAll可以唤醒所有。<br><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_175919.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:EXR0k6D_zx_LL_kK0dS7y3Ujoas" alt=""></p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_175948.png?e=1520420447&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:Yj4rnaBhtqoWrMHr8kdH-UcfsVk" alt=""></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-java-image" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/07/java-image/" class="article-date">
+      <time datetime="2018-03-06T17:02:35.000Z" itemprop="datePublished">2018-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/java-image/">java image</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Java 架构师总揽</p>
+<p><img src="http://p57oex9rc.bkt.clouddn.com/java.jpg?e=1520414871&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:S8p0vqXlfxs6HXoOMwsy24wvKJQ" alt=""></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java高级开发（前言）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/03/07/Java高级开发（前言）/" class="article-date">
@@ -249,23 +569,12 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Java高级开发（前言）
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a>
     </h1>
   
 
       </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -306,194 +615,39 @@
 
       
       
-        <div class="page-reward">
-          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
-          <div class="hide_box"></div>
-          <div class="shang_box">
-            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
-            <div class="shang_tit">
-              <p>纯属好玩</p>
-            </div>
-            <div class="shang_payimg">
-              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
-            </div>
-              <div class="pay_explain">扫码打赏，你说多少就多少</div>
-            <div class="shang_payselect">
-              
-                <div class="pay_item checked" data-id="alipay">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
-                </div>
-              
-              
-                <div class="pay_item" data-id="wechat">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
-                </div>
-              
-            </div>
-            <div class="shang_info">
-              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-        <script type="text/javascript">
-          $(".pay_item").click(function(){
-            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
-            var dataid=$(this).attr('data-id');
-            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
-            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
-          });
-          function dashangToggle(){
-            
-            $(".hide_box").fadeToggle();
-            $(".shang_box").fadeToggle();
-          }
-        </script>
+    </div>
+    
+    <div class="article-info article-info-index">
       
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
     </div>
     
   </div>
   
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Daxiong 的个人博客">Daxiong</a></p>
-        <p><span>发布时间:</span>2018年03月07日 - 00时36分</p>
-        <p><span>最后更新:</span>2018年03月07日 - 16时35分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/03/07/Java高级开发（前言）/" title="Java高级开发（前言）">http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/　　作者: Daxiong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-    <a href="/2018/03/07/java-image/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java image
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    
-</div>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
 
 
 
 
 
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
-
-    
-        <div id="gitments"></div>
-<script src="/js/gitment.browser.js"></script>
-<script>
-    var gitment = new Gitment({
-      id: window.location.pathname,
-      owner: 'luuman',
-      repo: 'luuman.github.io',
-      oauth: {
-        client_id: '',
-        client_secret: '',
-      },
-    })
-    gitment.render('gitments')
-</script>
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2018/03/07/java-image/" title="上一篇: java image">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/Hexo 博客发布/">Hexo 博客发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/RDD 基础/">RDD 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/JHispter-简单总结/">JHispter-简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/IdeaCarack/">Idea 2018 of free</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/mysql数据库基础(一)/">MYSQL数据库基础(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/java interview/">java 面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/github博客发布失败/">github博客发布失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/Angular基础（一）/">Angular基础一</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/11/gerrit_with_git/">gerrit with git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/Java高级开发（内存模型）/">Java高级开发（内存模型）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/java-image/">java image</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></li></ul>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
-
-
-
-    <script>
-        
-    </script>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
