@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta name="viewport" content="width=932" >
+  <meta name="MobileOptimized" content="932" >
+  <meta name="generator" content="Hexo">
+  <title></title>
+
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/awe.css">
+  <link rel="stylesheet" type="text/css" href="/css/social-likes.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="/js/imgLiquid-min.js"></script>
+  <script src="/js/social-likes.min.js"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    
+
+<div class="box profile">
+  <div class="heading" style="background: #3e5354 url(/images/bg-heading.jpg) no-repeat;">
+    <div class="profile-img">
+      <a href="//kywk.github.io/"><img src="/images/img-profile.jpg" width="154" height="150" alt="image description"></a>
+    </div>
+    <strong class="user"><a href="/">坚守信仰</a></strong>
+    <span class="locate">beijing</span>
+  </div>
+  <div class="setting">
+    <a href="//kywk.github.io/" class="btn-profile">Profile</a>
+    <a href="/" class="btn-photos">Photos</a>
+    <a href="/" class="btn-follow">Follow me</a>
+  </div>
+</div>
+
+    
+<div class="two-columns post-page">
+  <div class="content">
+
+    <div class="post box nocover">
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/RDD 基础/"></a></h2>
+      <div class="post-content"><hr>
+<p>title: Resilient Distributed Dataset</p>
+<p>date: 2018-04-21 18:38:42</p>
+<p>tags: Spark</p>
+<p>–</p>
+<h1 id="Resilient-Distributed-Dataset"><a href="#Resilient-Distributed-Dataset" class="headerlink" title="Resilient Distributed Dataset"></a>Resilient Distributed Dataset</h1><h2 id="1-弹性分布式数据集-应用于多台机子"><a href="#1-弹性分布式数据集-应用于多台机子" class="headerlink" title="1.弹性分布式数据集,应用于多台机子"></a>1.弹性分布式数据集,应用于多台机子</h2><h2 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h2><ul>
+<li><p>(1)A list of partitions(在一个节点中连续的数据片,一个partition 只能在一台机子中)<br>RDD 存在副本,副本中partition也是多个<br>数据切分,数据本地性<br>partition : 是具体的概念,指在某个节点中一片连续的数据.<br>RDD 是抽象的</p>
+</li>
+<li><p>(2)A function for compution each split<br>从数据来看,不出意外一个partition 就是一个split<br>从计算来看,split map<br>算子: map, filter,<br>并行计算</p>
+</li>
+<li><p>(3)A list of dependencies on other RDDs<br>RDD 会记住自己是由谁计算出来的,为了容错<br>HDFS中有很多block块,<br>在内存中的数据不稳定,如果内存中数据丢失,spark会重算.</p>
+</li>
+<li><p>(4)Optionally, a Partitioner for key-value RDDs</p>
+</li>
+<li><p>(5)Optionally, A list of perferred locations to compute each split on</p>
+</li>
+</ul>
+<p>4 核 8 线程: 一台机子中可以同时跑8条线.</p>
+<h1 id="Spark-运行时"><a href="#Spark-运行时" class="headerlink" title="Spark 运行时"></a>Spark 运行时</h1><ul>
+<li><p>filter() : 中间为true 则返回过来</p>
+</li>
+<li><p>计算是在内存中是瞬时状态<br>HadoopRDD -&gt; FilterRDD -&gt; PairRDD<br>从HadoopRDD 转化为FilterRDD时,如果成功计算为FilterRDD,那么HadoopRDD则没有了.</p>
+</li>
+<li><p>Hadoop : HDFS , MapReduce , Yarn</p>
+</li>
+<li>Spark: Sprak core, Spark Sql, Spark Stream, Spark mLib</li>
+</ul>
+<h1 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h1><ul>
+<li>Spark 将计算转化为一个有向无环图(DAG, Directed acyclic graph)的任务集合,这是在这些模型中能够有效地恢复DAG中故障和慢节点执行的任务.</li>
+<li>迭代计算 RDD可以支持各类型模型,如Pregel, MapReduce, GraphLib 和 PowerGraph等</li>
+<li>交互式SQL查询 </li>
+<li>MapReduceRDD</li>
+<li><p>流式数据处理</p>
+</li>
+<li><p>分布式文件系统(File system) -&gt; 加载数据集<br>一切数据过来都会转化为RDD,这里会进行很多的RDD转化.</p>
+</li>
+<li><p>一个物理节点有很多进程,集群中的进程存在时,集群就存在.<br>Driver: Job 跑Driver, 会发配当前job任务,切分为多个task,将task发送到Worker,Driver相当于一个任务调度<br>Worker: 接受输入数据,并在内存中计算,然后再将结果返回给Driver</p>
+</li>
+</ul>
+<h1 id="RDD-类型"><a href="#RDD-类型" class="headerlink" title="RDD 类型"></a>RDD 类型</h1><h2 id="1-工作机制"><a href="#1-工作机制" class="headerlink" title="1.工作机制"></a>1.工作机制</h2><p>我们编写驱动程序(Driver Program)来连接到工作进程(Worker),驱动程序定义一个或多个RDD以及相关行动的操作,驱动程序同时记录了RDD的继承关系,即lineage(血统),而Worker是一直运行的进程,它将经过一些列操作后的RDD分区数据保存在内存中.</p>
+<h2 id="2-Spark操作"><a href="#2-Spark操作" class="headerlink" title="2.Spark操作"></a>2.Spark操作</h2><h3 id="Creation-Operation"><a href="#Creation-Operation" class="headerlink" title="Creation Operation"></a>Creation Operation</h3><p>用于RDD创建工作,RDD创建只有两种方法,一种是来自于内存集合和外部存储系统,另一种是通过转化操作来生成RDD.</p>
+<h2 id="Transformation-Operation"><a href="#Transformation-Operation" class="headerlink" title="Transformation Operation"></a>Transformation Operation</h2><p>将RDD通过一定的操作变换成新的RDD,比如HadoopRDD可以使用map算子操作变换为MappedRDD,装换操作是延时操作,只是定义了一个新的RDDs,并不立即执行.</p>
+<h2 id="Control-Operation"><a href="#Control-Operation" class="headerlink" title="Control Operation"></a>Control Operation</h2><p>进行RDD持久化,可以让RDD按不同存储策略,保存在磁盘或者内存中,比如 persist()/ cache()</p>
+<h2 id="Action-Operation"><a href="#Action-Operation" class="headerlink" title="Action Operation"></a>Action Operation</h2><ul>
+<li><p>能够触发Spark运行的操作,如对RDD进行collect就是Action Operation<br>Action Operation分为两类,一类将操作结果变成Scala集合或者变量,另一类将RDD保存到外部文件系统或者数据库中.<br>Action 算子:会将之前操作封装为一个Job ,扔到集群中去计算.<br>碰到Action ,操作就提交一个job,扔到激情中去计算.<br>unpersist() 手动清除</p>
+</li>
+<li><p>为何做persist() 数据持久化<br>Job之间如果有数据需要复用,可以使用persist()来持久化.这是持久化到内存中.<br>cache() 也可以缓存到内存中.</p>
+</li>
+</ul>
+</div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="/2018/04/21/RDD 基础/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="widgetarea">
+
+    
+    
+
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDEA/" style="font-size: 12px;">IDEA</a> <a href="/tags/Java/" style="font-size: 24px;">Java</a></div>
+
+    
+
+    
+      
+
+<ul class="widget blogroll">
+  <h3 class="title">Recent Post</h3>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/Hexo 博客发布/"></a></h3>
+        <p>
+title: hexo 博客发布
+date: 2018-04-21 18:38:42
+tags: </p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/RDD 基础/"></a></h3>
+        <p>
+title: Resilient Distributed Dataset
+date: 2018-0</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/JHispter-简单总结/"></a></h3>
+        <p></p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/IdeaCarack/">Idea 2018 of free</a></h3>
+        <p>Install crack filefileName: JetbrainsCrack-2.7-rel</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/20/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></h3>
+        <p>mysql 数据查询相关
+一、条件过滤
+not 条件和() 条件
+
+1231.() 的用法2.not</p>
+      </div>
+    </li>
+  
+</ul>
+
+
+    
+
+  </div>
+</div>
+
+
+  </div>
+  
+<div class="footer">
+  <div class="container">
+    <a href="//github.com/kywk/hexo-theme-awe">AWE for hexo</a> inspired by <a href="http://goo.gl/H8OMRE">Awesome UI Kit</a>,
+    ported by <a href="//kywk.github.io/">MooCow (Aka. kywk)</a>.
+    
+    &copy; 2018 John Doe All Rights Reserved
+    
+  </div>
+</div>
+
+  <!-- disqus -->
+
+
+
+<script>
+$(document).ready(function() {
+  $('.imgLiquid').imgLiquid({fill:true, fadeInTime:500});
+});
+</script>
+
+
+<!-- fancybox -->
+<link rel="stylesheet" href="/package/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/package/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript">
+(function($){
+  $(".fancybox").fancybox();
+  $(".various").fancybox({
+    maxWidth  : 800,
+    maxHeight : 600,
+    fitToView : false,
+    width   : '70%',
+    height    : '70%',
+    autoSize  : true,
+    closeClick  : false,
+    openEffect  : 'none',
+    closeEffect : 'none'
+  });
+})(jQuery);
+</script>
+
+</body>
+</html>

@@ -45,30 +45,99 @@
 
 
     <div class="post box nocover">
-      <em class="date"><span>20</span>Apr</em>
-      <h2 class="post-title"><a href="/2018/04/20/mysql数据库基础(二) - Copy (2)/">MYSQL数据库基础(二)</a></h2>
-      <div class="post-content">mysql 数据查询相关
-一、条件过滤
-not 条件和() 条件
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/Hexo 博客发布/"></a></h2>
+      <div class="post-content">
+title: hexo 博客发布
+date: 2018-04-21 18:38:42
+tags: blog
+–
 
-1231.() 的用法2.not 的用法where end is null and not (title = &apos;hello&apos;);
+1.进入E:/GitHub/node/Install/blog/source/_posts 文件夹下书写博客,.md文件
+2.打开git命令行：进入E:/GitHub/node/Install/blog/hexo g : 重新发布博客hexo d : 发送博客到远程仓库hexo clean : 清除
+3.创建带有图片的博客hexo new “hello”会在_posts 文件下生成 hello.md 文件和 hello 文件夹（图片放入其中，如放入java.jpg），在md文件中引用
+4.图片存储为七牛云https://www.qiniu.com/ 
 
-子查询作为临时表
 
-1dept_id = (select dept_id from department where name = &apos;loans&apos;)
-
-不相等条件 &lt;&gt; / !=
-范围条件 between
-1234where date between &apos;2005-01-01&apos; and &apos;2005-12-31&apos;;1.between 条件包含前后值，例如上面包含2005-01-01 当天和2005-12-31 当天。2.如果between 前面的值比后面的值大，查询时不会报错而是返回空集。3.字符串也可以当
       </div>
 
       <div class="bottom-panel">
-        <ul class="social-likes" data-url="http://yoursite.com/2018/04/20/mysql数据库基础(二) - Copy (2)/">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/04/21/Hexo 博客发布/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
         </ul>
-        <a href="http://yoursite.com/2018/04/20/mysql数据库基础(二) - Copy (2)/#disqus_thread" class="btn-comment">Comments</a>
+        <a href="http://yoursite.com/2018/04/21/Hexo 博客发布/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="post box nocover">
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/RDD 基础/"></a></h2>
+      <div class="post-content">
+title: Resilient Distributed Dataset
+date: 2018-04-21 18:38:42
+tags: Spark
+–
+Resilient Distributed Dataset1.弹性分布式数据集,应用于多台机子RDD
+(1)A list of partitions(在一个节点中连续的数据片,一个partition 只能在一台机子中)RDD 存在副本,副本中partition也是多个数据切分,数据本地性partition : 是具体的概念,指在某个节点中一片连续的数据.RDD 是抽象的
+
+(2)A function for compution each split从数据来看,不出意外一个partition 就是一个split从计算来看,split map算子: map, filter,并行计算
+
+(3)A list of dependencies on
+      </div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/04/21/RDD 基础/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+        <a href="http://yoursite.com/2018/04/21/RDD 基础/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="post box nocover">
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/JHispter-简单总结/"></a></h2>
+      <div class="post-content">
+      </div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/04/21/JHispter-简单总结/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+        <a href="http://yoursite.com/2018/04/21/JHispter-简单总结/#disqus_thread" class="btn-comment">Comments</a>
+      </div>
+    </div>
+
+
+
+
+    <div class="post box nocover">
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/IdeaCarack/">Idea 2018 of free</a></h2>
+      <div class="post-content">Install crack filefileName: JetbrainsCrack-2.7-release-str.jarlink: http://idea.lanyus.com/jar/JetbrainsCrack-2.7-release-str.jar
+copy crack file to bin dirD:\life\environment\Idea\ideaIU-2018.1.1.win\bin
+modify bin/idea.exe.vmoptions and bin/idea64.exe.vmoptionsAdd a line : -javaagent:这里放置对应补丁包的路径（比如：D:/indea/bin/JetbrainsCrack-2.7-release-str.jar） in the file end.
+input the active code`BIG3CLIK6
+      </div>
+
+      <div class="bottom-panel">
+        <ul class="social-likes" data-url="http://yoursite.com/2018/04/21/IdeaCarack/">
+          <li class="facebook" title="like"></li>
+          <li class="twitter" title="twitte"></li>
+          <li class="plusone" title="google"></li>
+        </ul>
+        <a href="http://yoursite.com/2018/04/21/IdeaCarack/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
 
@@ -100,37 +169,6 @@ not 条件和() 条件
           <li class="plusone" title="google"></li>
         </ul>
         <a href="http://yoursite.com/2018/04/20/mysql数据库基础(二)/#disqus_thread" class="btn-comment">Comments</a>
-      </div>
-    </div>
-
-
-
-
-    <div class="post box nocover">
-      <em class="date"><span>20</span>Apr</em>
-      <h2 class="post-title"><a href="/2018/04/20/mysql数据库基础(二) - Copy/">MYSQL数据库基础(二)</a></h2>
-      <div class="post-content">mysql 数据查询相关
-一、条件过滤
-not 条件和() 条件
-
-1231.() 的用法2.not 的用法where end is null and not (title = &apos;hello&apos;);
-
-子查询作为临时表
-
-1dept_id = (select dept_id from department where name = &apos;loans&apos;)
-
-不相等条件 &lt;&gt; / !=
-范围条件 between
-1234where date between &apos;2005-01-01&apos; and &apos;2005-12-31&apos;;1.between 条件包含前后值，例如上面包含2005-01-01 当天和2005-12-31 当天。2.如果between 前面的值比后面的值大，查询时不会报错而是返回空集。3.字符串也可以当
-      </div>
-
-      <div class="bottom-panel">
-        <ul class="social-likes" data-url="http://yoursite.com/2018/04/20/mysql数据库基础(二) - Copy/">
-          <li class="facebook" title="like"></li>
-          <li class="twitter" title="twitte"></li>
-          <li class="plusone" title="google"></li>
-        </ul>
-        <a href="http://yoursite.com/2018/04/20/mysql数据库基础(二) - Copy/#disqus_thread" class="btn-comment">Comments</a>
       </div>
     </div>
 
@@ -288,6 +326,8 @@ Quick Start@Component@Component({
     
     <a class="button" href="/tags/Java/">Java</a>
     
+    <a class="button" href="/tags/IDEA/">IDEA</a>
+    
     <a class="button" href="/tags/Git/">Git</a>
     
   </div>
@@ -295,7 +335,7 @@ Quick Start@Component@Component({
 </div>
 
 
-<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/Java/" style="font-size: 24px;">Java</a></div>
+<div class="tagcloud" id="fbox-tagcloud" style="margin:10px; display:none; overflow: hidden"><a href="/tags/Git/" style="font-size: 12px;">Git</a> <a href="/tags/IDEA/" style="font-size: 12px;">IDEA</a> <a href="/tags/Java/" style="font-size: 24px;">Java</a></div>
 
     
 
@@ -308,12 +348,37 @@ Quick Start@Component@Component({
     
     <li>
       <div class="text-holder">
-        <h3 class="link-title"><a href="/2018/04/20/mysql数据库基础(二) - Copy (2)/">MYSQL数据库基础(二)</a></h3>
-        <p>mysql 数据查询相关
-一、条件过滤
-not 条件和() 条件
-
-1231.() 的用法2.not</p>
+        <h3 class="link-title"><a href="/2018/04/21/Hexo 博客发布/"></a></h3>
+        <p>
+title: hexo 博客发布
+date: 2018-04-21 18:38:42
+tags: </p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/RDD 基础/"></a></h3>
+        <p>
+title: Resilient Distributed Dataset
+date: 2018-0</p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/JHispter-简单总结/"></a></h3>
+        <p></p>
+      </div>
+    </li>
+  
+    
+    <li>
+      <div class="text-holder">
+        <h3 class="link-title"><a href="/2018/04/21/IdeaCarack/">Idea 2018 of free</a></h3>
+        <p>Install crack filefileName: JetbrainsCrack-2.7-rel</p>
       </div>
     </li>
   
@@ -326,43 +391,6 @@ not 条件和() 条件
 not 条件和() 条件
 
 1231.() 的用法2.not</p>
-      </div>
-    </li>
-  
-    
-    <li>
-      <div class="text-holder">
-        <h3 class="link-title"><a href="/2018/04/20/mysql数据库基础(二) - Copy/">MYSQL数据库基础(二)</a></h3>
-        <p>mysql 数据查询相关
-一、条件过滤
-not 条件和() 条件
-
-1231.() 的用法2.not</p>
-      </div>
-    </li>
-  
-    
-    <li>
-      <div class="text-holder">
-        <h3 class="link-title"><a href="/2018/04/20/mysql数据库基础(一)/">MYSQL数据库基础(一)</a></h3>
-        <p>
-表操作
-约束
-数据操作
-查询
-表分类
-
-###一、 表操作
-1.创建数据库
-  CREATE DA</p>
-      </div>
-    </li>
-  
-    
-    <li>
-      <div class="text-holder">
-        <h3 class="link-title"><a href="/2018/04/20/java interview/">java 面试总结</a></h3>
-        <p>数据库设计三范式12341. 范式可以避免数据冗余，减少数据库的存储空间，减轻维护数据完整性的麻烦，</p>
       </div>
     </li>
   

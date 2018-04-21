@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=932" >
   <meta name="MobileOptimized" content="932" >
   <meta name="generator" content="Hexo">
-  <title>Angular基础一</title>
+  <title></title>
 
   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/awe.css">
@@ -42,30 +42,23 @@
   <div class="content">
 
     <div class="post box nocover">
-      <em class="date"><span>20</span>Apr</em>
-      <h2 class="post-title"><a href="/2018/04/20/Angular基础（一）/">Angular基础一</a></h2>
-      <div class="post-content"><p>一些基础用法</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h3><pre><code>@Component({
-    selector: &apos;app-hello&apos;,   // 用于模版中的标签
-    templateUrl: &apos;./hello.component.html&apos;,  // 模版
-    styleUrls: [&apos;./hello.component.css&apos;] // 模版样式
-})
-</code></pre><h3 id="ngFor"><a href="#ngFor" class="headerlink" title="*ngFor"></a>*ngFor</h3><pre><code>*ngFor : 在一个列表上进行迭代，为列表的每一个条目生成一个新的标签。
-&lt;li *ngFor=&quot;let name of names&quot;&gt;{{name}}&lt;/li&gt;
-</code></pre><h3 id="Input"><a href="#Input" class="headerlink" title="@Input"></a>@Input</h3><pre><code>@Input 可以将数据传输给自组件，能够接受输入。
-@Input() name: string;
-&lt;app-hello *ngFor=&quot;let myname of names&quot; [name] = myname&gt;&lt;/app-hello&gt;
-</code></pre><h3 id="NgModule"><a href="#NgModule" class="headerlink" title="@NgModule"></a>@NgModule</h3><pre><code>在创建组件时必须把组件放入@NgModule的declarations中。
-@NgModule({
-declarations: [
-  AppComponent,
-  HelloComponent
-]    
-})
-</code></pre></div>
+      <em class="date"><span>21</span>Apr</em>
+      <h2 class="post-title"><a href="/2018/04/21/Hexo 博客发布/"></a></h2>
+      <div class="post-content"><hr>
+<p>title: hexo 博客发布</p>
+<p>date: 2018-04-21 18:38:42</p>
+<p>tags: blog</p>
+<p>–</p>
+<ul>
+<li>1.进入E:/GitHub/node/Install/blog/source/_posts 文件夹下<br>书写博客,.md文件</li>
+<li>2.打开git命令行：进入E:/GitHub/node/Install/blog/<br>hexo g : 重新发布博客<br>hexo d : 发送博客到远程仓库<br>hexo clean : 清除</li>
+<li>3.创建带有图片的博客<br>hexo new “hello”<br>会在_posts 文件下生成 hello.md 文件和 hello 文件夹（图片放入其中，如放入java.jpg），在md文件中引用</li>
+<li>4.图片存储为七牛云<br><a href="https://www.qiniu.com/" target="_blank" rel="noopener">https://www.qiniu.com/</a> </li>
+</ul>
+</div>
 
       <div class="bottom-panel">
-        <ul class="social-likes" data-url="/2018/04/20/Angular基础（一）/">
+        <ul class="social-likes" data-url="/2018/04/21/Hexo 博客发布/">
           <li class="facebook" title="like"></li>
           <li class="twitter" title="twitte"></li>
           <li class="plusone" title="google"></li>
