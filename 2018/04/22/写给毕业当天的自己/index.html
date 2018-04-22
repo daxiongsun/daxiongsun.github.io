@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java高级开发（前言） | Daxiong&#39;s blogs</title>
+  <title>Daxiong&#39;s blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta name="keywords" content="Java">
+  <meta name="description" content="现在是北京时间2018年4月22日晚上10点10分,距离我毕业(6月20左右)只有两个月,在这两个月中我想做: 一、4月底完成毕设论文初版初稿的要求: 对整个毕设有清晰的脉络,整体思路,细节都需要呈现. 二、5月15号完成毕设经过指导老师确认,论文,毕设都准备齐全. 三、补习基础知识java并发基础对java的核心功能掌握,尤其是多线程 高并发分布式系统基础知识重点放到分布式存储和消息中间件tom">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java高级开发（前言）">
-<meta property="og:url" content="http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/index.html">
+<meta property="og:title" content="Daxiong&#39;s blogs">
+<meta property="og:url" content="http://daxiongit.github.io/2018/04/22/写给毕业当天的自己/index.html">
 <meta property="og:site_name" content="Daxiong&#39;s blogs">
-<meta property="og:description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001831.png?e=1520414870&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:PvAESuOfzOFdSpWu0hWYfxiTD38">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001842.png?e=1520414871&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:JRt9arXnarGxlyVGq82AE4G_QUs">
-<meta property="og:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001854.png?e=1520414871&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:N3R2bz2lznk1Y6-up5kOKmSrx7I">
-<meta property="og:updated_time" content="2018-03-07T08:35:47.206Z">
+<meta property="og:description" content="现在是北京时间2018年4月22日晚上10点10分,距离我毕业(6月20左右)只有两个月,在这两个月中我想做: 一、4月底完成毕设论文初版初稿的要求: 对整个毕设有清晰的脉络,整体思路,细节都需要呈现. 二、5月15号完成毕设经过指导老师确认,论文,毕设都准备齐全. 三、补习基础知识java并发基础对java的核心功能掌握,尤其是多线程 高并发分布式系统基础知识重点放到分布式存储和消息中间件tom">
+<meta property="og:updated_time" content="2018-04-22T15:37:21.525Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java高级开发（前言）">
-<meta name="twitter:description" content="重要词汇   同步和异步 123456789101112131415161.同步（synchronous）异步（asynchronous）2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。3.区别：同步需要等待，异步不需要等待同步：提交请求-&amp;gt;等待服务器处理-&amp;gt;处">
-<meta name="twitter:image" content="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001831.png?e=1520414870&token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:PvAESuOfzOFdSpWu0hWYfxiTD38">
+<meta name="twitter:title" content="Daxiong&#39;s blogs">
+<meta name="twitter:description" content="现在是北京时间2018年4月22日晚上10点10分,距离我毕业(6月20左右)只有两个月,在这两个月中我想做: 一、4月底完成毕设论文初版初稿的要求: 对整个毕设有清晰的脉络,整体思路,细节都需要呈现. 二、5月15号完成毕设经过指导老师确认,论文,毕设都准备齐全. 三、补习基础知识java并发基础对java的核心功能掌握,尤其是多线程 高并发分布式系统基础知识重点放到分布式存储和消息中间件tom">
   
     <link rel="alternative" href="/atom.xml" title="Daxiong&#39;s blogs" type="application/atom+xml">
   
@@ -233,11 +228,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Java高级开发（前言）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-写给毕业当天的自己" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/07/Java高级开发（前言）/" class="article-date">
-      <time datetime="2018-03-06T16:36:42.000Z" itemprop="datePublished">2018-03-07</time>
+      <a href="/2018/04/22/写给毕业当天的自己/" class="article-date">
+      <time datetime="2018-04-22T15:59:00.374Z" itemprop="datePublished">2018-04-22</time>
 </a>
     </div>
   
@@ -246,64 +241,24 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Java高级开发（前言）
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ul>
-<li><strong>重要词汇</strong></li>
-</ul>
-<ol>
-<li><p>同步和异步</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.同步（synchronous）</span><br><span class="line">异步（asynchronous）</span><br><span class="line"></span><br><span class="line">2.同步指一个进程在执行某个请求的时候，会等待该请求完成才会去执行其它任务，在这个等待期间，不做其它事情。</span><br><span class="line">异步指进程不需要一直等待下去，而是在等待的同时继续执行下面的操作。</span><br><span class="line"></span><br><span class="line">3.区别：</span><br><span class="line">同步需要等待，异步不需要等待</span><br><span class="line">同步：提交请求-&gt;等待服务器处理-&gt;处理完毕返回(等待期间不做其他事情)</span><br><span class="line">异步：请求通过事件出发-&gt;服务器处理-&gt;处理完毕(可同时处理其他任务)</span><br><span class="line">同步按顺序执行，异步彼此独立。</span><br><span class="line">异步和多线程不是同等关系，异步是最终结果，多线程只是实现异步的一种方式而已，实现异步可以采用多线程或者交给另外的进程来处理。</span><br><span class="line"></span><br><span class="line">4.优缺点</span><br><span class="line">同步可以避免出现死锁，读脏数据的发生。共享某一资源时可以使用同步。</span><br><span class="line">异步可以提高效率，但是安全性低。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并发和并行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.并发(Concurrency):并发指在一段时间间隔内，多条线路间断交替处理的过程，同一时刻只有一条线路在执行。</span><br><span class="line">并行(Parallelism)：并行指在同一时刻多条线路同时执行。</span><br><span class="line"></span><br><span class="line">2.并发发生在逻辑上，一个处理器同时处理多个任务。</span><br><span class="line">并行发生在物理上，多个处理器同时刻并行处理多个任务。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>临界区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">临界区用来表示一种公共资源或者共享数据，可以被多个线程使用，但是每一次只能被一个线程使用，一旦临界区被占用，其他线程要想使用这个资源，就必须等待。</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001831.png?e=1520414870&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:PvAESuOfzOFdSpWu0hWYfxiTD38" alt="临界区"></p>
-<ol>
-<li><p>阻塞和非阻塞</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.阻塞（Blocking）</span><br><span class="line">非阻塞（Non-Blocking）</span><br><span class="line"></span><br><span class="line">2.两者通常用来形容多线程的相互影响，比如一个线程占用了临界区资源，那么其它所有需要这个资源的线程就必须在这个临界区中等待，等待会导致线程挂起，这中情况就是阻塞。如果占用资源的线程一直不释放资源，那么阻塞其他线程都不能工作。</span><br><span class="line"></span><br><span class="line">3.非阻塞允许多个线程同时进入临界区</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>死锁、饥饿、活锁</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.死锁（Deadlock）、饥饿（Starvation）、活锁（Livelock）</span><br><span class="line"></span><br><span class="line">2.死锁：两个或两个以上的进程（或线程）在执行过程中，因争夺资源二造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去，此时系统处于死锁状态，进程称为死锁进程。</span><br><span class="line"></span><br><span class="line">3.活锁：线程1可以使用资源，但是它让其他线程先使用，线程2也可以使用资源，它也让其它线程先使用，导致你让我，我让你，最后两个线程都将无法使用资源。</span><br><span class="line"></span><br><span class="line">4.饥饿：如果线程1占用了资源B，线程2又请求封锁资源B，于是线程2等待。线程3也请求资源B，当线程1释放了资源B，首先批准线程3的请求，线程2任然等待，然后线程4又请求封锁资源B，当线程3释放资源B，又批准了线程4的请求...，线程2一直没有等待资源B，线程2可能永远等待下去。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并发级别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.并发级别分为：</span><br><span class="line">阻塞</span><br><span class="line">无障碍</span><br><span class="line">无锁</span><br><span class="line">无等待</span><br><span class="line"></span><br><span class="line">2.无障碍</span><br><span class="line">无障碍是一种最弱的非阻塞调度，自由出入临界区，无竞争时，有限步内完成操作，有竞争时回滚数据。</span><br><span class="line"></span><br><span class="line">3.无锁</span><br><span class="line">无锁是无保障的，保证有一个线程可以胜出</span><br><span class="line"></span><br><span class="line">4.无等待</span><br><span class="line">无等待是无锁的，要求所有的线程都必须在有限步内完成，无饥饿的。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>定律</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.阿姆达尔定律(Amdahl)</span><br><span class="line">定义了串行系统并行化后的加速比的计算公式和理论上限</span><br><span class="line">加速比 = 优化前系统耗时/优化后系统耗时</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001842.png?e=1520414871&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:JRt9arXnarGxlyVGq82AE4G_QUs" alt="Amdahl"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2.古斯塔夫森定律（Gustafson）</span><br><span class="line">说明处理器个数，串行比例和加速比之间的关系：只要有足够的并行比，那么加速比和cpu个数程正比。</span><br></pre></td></tr></table></figure>
-<p><img src="http://p57oex9rc.bkt.clouddn.com/2018-03-07_001854.png?e=1520414871&amp;token=Ixr9kUv42YwUmqjZVILMCGHvYOc-G94xiTufK2AW:N3R2bz2lznk1Y6-up5kOKmSrx7I" alt="Gustafson"></p>
-
+        <p>现在是北京时间2018年4月22日晚上10点10分,距离我毕业(6月20左右)只有两个月,在这两个月中我想做:</p>
+<h1 id="一、4月底完成毕设论文初版"><a href="#一、4月底完成毕设论文初版" class="headerlink" title="一、4月底完成毕设论文初版"></a>一、4月底完成毕设论文初版</h1><p>初稿的要求: 对整个毕设有清晰的脉络,整体思路,细节都需要呈现.</p>
+<h1 id="二、5月15号完成毕设"><a href="#二、5月15号完成毕设" class="headerlink" title="二、5月15号完成毕设"></a>二、5月15号完成毕设</h1><p>经过指导老师确认,论文,毕设都准备齐全.</p>
+<h1 id="三、补习基础知识"><a href="#三、补习基础知识" class="headerlink" title="三、补习基础知识"></a>三、补习基础知识</h1><h3 id="java并发基础"><a href="#java并发基础" class="headerlink" title="java并发基础"></a>java并发基础</h3><p>对java的核心功能掌握,尤其是多线程</p>
+<h3 id="高并发分布式系统基础知识"><a href="#高并发分布式系统基础知识" class="headerlink" title="高并发分布式系统基础知识"></a>高并发分布式系统基础知识</h3><p>重点放到分布式存储和消息中间件<br>tomcat 集群,nginx,MQ</p>
+<p>(1)实战Java高并发程序设计[葛一敏]</p>
+<p>(2)java 编程思想(4th)</p>
+<p>(3)Spring_Microservices</p>
+<h3 id="Angular-5-整体思想"><a href="#Angular-5-整体思想" class="headerlink" title="Angular 5 整体思想"></a>Angular 5 整体思想</h3><p>(1)Apress.Pro.Angular<br>能够自己设计构建系统,自定义可扩展的组件.</p>
+<h1 id="四、数据库、算法、设计模式"><a href="#四、数据库、算法、设计模式" class="headerlink" title="四、数据库、算法、设计模式"></a>四、数据库、算法、设计模式</h1><p>平时多积累,多做题</p>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>(1)Python语法<br>(2)Python爬虫</p>
+<h3 id="Oracle-amp-MySql-数据库"><a href="#Oracle-amp-MySql-数据库" class="headerlink" title="Oracle &amp; MySql 数据库"></a>Oracle &amp; MySql 数据库</h3><p>(1)常用sql语句<br>(2)函数,视图,存储过程<br>(3)优化及高级特性</p>
+<h1 id="五、交流"><a href="#五、交流" class="headerlink" title="五、交流"></a>五、交流</h1><p>1.多和身边的人交流，有问题多问，越是感觉不好意思的问题越是要厚着脸皮问。<br>2.对一些即将要发生的，现在可以处理的事情，一定不要拖着，需要立即处理。<br>3.出现问题或者感觉不对，今早提出，寻求帮助。<br>4.每周和一些朋友打电话，视频聊聊天。</p>
+<h1 id="六、表现"><a href="#六、表现" class="headerlink" title="六、表现"></a>六、表现</h1><h3 id="重要习惯-坚持每天都做"><a href="#重要习惯-坚持每天都做" class="headerlink" title="重要习惯(坚持每天都做)"></a>重要习惯(坚持每天都做)</h3><p>早晨听英文，看笔记<br>晚上写博客，笔记</p>
+<h3 id="每周都要给自己定目标-工作目标、课外目标"><a href="#每周都要给自己定目标-工作目标、课外目标" class="headerlink" title="每周都要给自己定目标:工作目标、课外目标"></a>每周都要给自己定目标:工作目标、课外目标</h3><h3 id="每晚看半小时书-可以是英文-小说-励志等"><a href="#每晚看半小时书-可以是英文-小说-励志等" class="headerlink" title="每晚看半小时书(可以是英文,小说,励志等)"></a>每晚看半小时书(可以是英文,小说,励志等)</h3>
       
       
         <div class="page-reward">
@@ -358,13 +313,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/22/写给毕业当天的自己/"></a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Daxiong 的个人博客">Daxiong</a></p>
-        <p><span>发布时间:</span>2018年03月07日 - 00时36分</p>
-        <p><span>最后更新:</span>2018年03月07日 - 16时35分</p>
+        <p><span>发布时间:</span>2018年04月22日 - 23时59分</p>
+        <p><span>最后更新:</span>2018年04月22日 - 23时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/03/07/Java高级开发（前言）/" title="Java高级开发（前言）">http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://daxiongit.github.io/2018/03/07/Java高级开发（前言）/　　作者: Daxiong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/22/写给毕业当天的自己/" title="">http://daxiongit.github.io/2018/04/22/写给毕业当天的自己/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://daxiongit.github.io/2018/04/22/写给毕业当天的自己/　　作者: Daxiong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -377,15 +332,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/03/07/java-image/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java image
-        
-      </div>
-    </a>
   
+    <a href="/2018/04/21/Hexo 博客发布/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -394,7 +345,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、4月底完成毕设论文初版"><span class="toc-number">1.</span> <span class="toc-text">一、4月底完成毕设论文初版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、5月15号完成毕设"><span class="toc-number">2.</span> <span class="toc-text">二、5月15号完成毕设</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、补习基础知识"><span class="toc-number">3.</span> <span class="toc-text">三、补习基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#java并发基础"><span class="toc-number">3.0.1.</span> <span class="toc-text">java并发基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高并发分布式系统基础知识"><span class="toc-number">3.0.2.</span> <span class="toc-text">高并发分布式系统基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Angular-5-整体思想"><span class="toc-number">3.0.3.</span> <span class="toc-text">Angular 5 整体思想</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、数据库、算法、设计模式"><span class="toc-number">4.</span> <span class="toc-text">四、数据库、算法、设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">4.0.1.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oracle-amp-MySql-数据库"><span class="toc-number">4.0.2.</span> <span class="toc-text">Oracle &amp; MySql 数据库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、交流"><span class="toc-number">5.</span> <span class="toc-text">五、交流</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、表现"><span class="toc-number">6.</span> <span class="toc-text">六、表现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#重要习惯-坚持每天都做"><span class="toc-number">6.0.1.</span> <span class="toc-text">重要习惯(坚持每天都做)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每周都要给自己定目标-工作目标、课外目标"><span class="toc-number">6.0.2.</span> <span class="toc-text">每周都要给自己定目标:工作目标、课外目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#每晚看半小时书-可以是英文-小说-励志等"><span class="toc-number">6.0.3.</span> <span class="toc-text">每晚看半小时书(可以是英文,小说,励志等)</span></a></li></ol></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -460,13 +411,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/03/07/java-image/" title="上一篇: java image">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/04/21/Hexo 博客发布/" title="下一篇: ">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/22/写给毕业当天的自己/">写给毕业当天的自己</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/Hexo 博客发布/">Hexo 博客发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/RDD 基础/">RDD 基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/JHispter-简单总结/">JHispter-简单总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/21/IdeaCarack/">Idea 2018 of free</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/mysql数据库基础(二)/">MYSQL数据库基础(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/mysql数据库基础(一)/">MYSQL数据库基础(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/java interview/">java 面试总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/github博客发布失败/">github博客发布失败</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/20/Angular基础（一）/">Angular基础一</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/11/gerrit_with_git/">gerrit with git</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/08/Java高级开发（内存模型）/">Java高级开发（内存模型）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/Java高级开发（并发基础）/">Java高级开发（并发基础）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/java-image/">java image</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/07/Java高级开发（前言）/">Java高级开发（前言）</a></li></ul>
