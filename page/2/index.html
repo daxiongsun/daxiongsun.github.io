@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Daxiong&#39;s blogs">
-<meta property="og:url" content="http://daxiongit.github.io/page/2/index.html">
+<meta property="og:url" content="http://daxiongsun.github.io/page/2/index.html">
 <meta property="og:site_name" content="Daxiong&#39;s blogs">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Daxiong&#39;s blogs">
@@ -147,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a>
+                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a>
                     </div>
                 </section>
                 
@@ -229,11 +229,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-mysql数据库基础(二)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-设计模式之模板方法模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/20/mysql数据库基础(二)/" class="article-date">
-      <time datetime="2018-04-20T15:20:48.269Z" itemprop="datePublished">2018-04-20</time>
+      <a href="/2018/05/05/设计模式之模板方法模式/" class="article-date">
+      <time datetime="2018-05-05T11:19:00.027Z" itemprop="datePublished">2018-05-05</time>
 </a>
     </div>
   
@@ -242,69 +242,11 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/mysql数据库基础(二)/">MYSQL数据库基础(二)</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>mysql 数据查询相关</p>
-<h3 id="一、条件过滤"><a href="#一、条件过滤" class="headerlink" title="一、条件过滤"></a>一、条件过滤</h3><ul>
-<li>not 条件和() 条件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.() 的用法</span><br><span class="line">2.not 的用法</span><br><span class="line">where end is null and not (title = &apos;hello&apos;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>子查询作为临时表</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dept_id = (select dept_id from department where name = &apos;loans&apos;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>不相等条件 &lt;&gt; / !=</li>
-<li><p>范围条件 between</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">where date between &apos;2005-01-01&apos; and &apos;2005-12-31&apos;;</span><br><span class="line">1.between 条件包含前后值，例如上面包含2005-01-01 当天和2005-12-31 当天。</span><br><span class="line">2.如果between 前面的值比后面的值大，查询时不会报错而是返回空集。</span><br><span class="line">3.字符串也可以当作范围来使用。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>成员条件（类似于枚举）: in </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">比如：select * from account where product_cd = &apos;A&apos; or product_cd = &apos;B&apos; or product_cd = &apos;D&apos;;</span><br><span class="line">可以采用：</span><br><span class="line">where product_cd in (&apos;A&apos;,&apos;B&apos;,&apos;C&apos;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>匹配条件 left() / right();</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">处理部分字符串匹配问题：比如可以找到以T开头的字符串或者以B结尾的字符串</span><br><span class="line">... where left(lname,1) = &apos;T&apos; or right(lname,1) = &apos;B&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>通配符的使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_ : 一个字符</span><br><span class="line">% : 任意数目的字符(包含0个字符)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>正则表达式匹配 regexp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where lname regexp &apos;^[FG]&apos;;以字符F或者G开头。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>null</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.null 表示值的缺失</span><br><span class="line">没有合适的值、值为确定、值为定义。</span><br><span class="line">2.表达式的值可以为null，但是不能等于null。一般采用 is null/ is not null;</span><br><span class="line">3.两个null值不能彼此判断为相等。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="二、多表查询"><a href="#二、多表查询" class="headerlink" title="二、多表查询"></a>二、多表查询</h3><ul>
-<li><p>内查询 inner join … on …</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.select e.lname,d.name  from  employee e join department d;</span><br><span class="line">多表连接如果没有明确指出如何连接，默认采用内链接。</span><br><span class="line">没有明确指出连接条件，结果返回笛卡尔积。也就是说两张表所有置换，若employee 有5条信息，department 表有3条信息，那么结果会返回 5 * 3 = 15 条结果。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>inner join 连接失败</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">select e.fname,e.lname,d.name from employee e inner join department d on e.dept_id = d.dept_id;</span><br><span class="line">如果一个表中的dept_id 列中存在某个值，但是该值在另一个表中的dept_id中不存在，那么相关行就会连接失败。在结果集中值存在两表相互存在的行数据。</span><br><span class="line"></span><br><span class="line">内链接是查询交叉部分的数据，假如连接条件为a.bid = b.id 那么结果中只会出现，a.bid 的值既存在a表中也存在b表中的数据。</span><br><span class="line"></span><br><span class="line">如果想要显示在a.bid 存在于a表中的值，但是不存在b表中的值的行，可以采用外连接 outer join ... on...</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>连接条件和过滤条件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.连接条件 on 后面的条件</span><br><span class="line"></span><br><span class="line">2.过滤条件 where 后面的条件</span><br><span class="line"></span><br><span class="line">select a.account_id,a.cust_id,a.open_date,a.product_cd from account a inner join employee e on a.open_emp_id = e.emp_id inner join branch b on e.assigned_branch_id = b.branch_id where e.start_date &lt; &apos;2007-01-01&apos; and (e.title = &apos;Taller&apos; or e.title = &apos;Head Teller&apos;) and b.name = &apos;Woburn Branch&apos;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>连接顺序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL 是一种非过程化的语言，也就是说只需要描述要获取的数据对象，而如何以最好的方式执行查询则由数据库服务器负责，服务器根据所收集的数据库对象信息，在多表中选择一个作为开始点（驱动表），然后确定连接其它表的顺序。、</span><br><span class="line">from字句各表出现的顺序不重要。</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自连接 同一张表相互连接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select e.fname,e.lname,e_mgr.fname,e_mgr.lname from employee e inner join employee e_mgr on e.superior_emp_id = e_mgr.emp_id;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1><p>模板方法模式指的是父类将固定的方法实现，子类特定的方法交给子类自己去实现。</p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// abstract base</span><br><span class="line">abstract class Base&#123;</span><br><span class="line">    public void config()&#123;</span><br><span class="line">        System.out.println(&quot;system config&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public void style()&#123;</span><br><span class="line">        System.out.println(&quot;set system style&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    abstract void setHeaderStyle(int width, int height, int color);</span><br><span class="line">    abstract void generateCode(int count, String col, String row);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Sub1 extends Base&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    void setHeaderStyle(int width, int height, int color) &#123;</span><br><span class="line">        System.out.println(&quot;Sub1==&quot; + &quot;width:&quot; + width + &quot;, height:&quot; + height + &quot;, color:&quot; + color);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    void generateCode(int count, String col, String row) &#123;</span><br><span class="line">        System.out.println(&quot;Sub1==&quot; + &quot;count:&quot; + count + &quot;, col:&quot; + col + &quot;, row:&quot; + row);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Sub2 extends Base&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    void setHeaderStyle(int width, int height, int color) &#123;</span><br><span class="line">        System.out.println(&quot;Sub2==&quot; + &quot;width:&quot; + width + &quot;, height:&quot; + height + &quot;, color:&quot; + color);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    void generateCode(int count, String col, String row) &#123;</span><br><span class="line">        System.out.println(&quot;Sub2==&quot; + &quot;count:&quot; + count + &quot;, col:&quot; + col + &quot;, row:&quot; + row);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
       
@@ -332,11 +274,11 @@
 
 
   
-    <article id="post-mysql数据库基础(一)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-设计模式之适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/20/mysql数据库基础(一)/" class="article-date">
-      <time datetime="2018-04-20T15:20:48.267Z" itemprop="datePublished">2018-04-20</time>
+      <a href="/2018/05/05/设计模式之适配器模式/" class="article-date">
+      <time datetime="2018-05-05T11:18:54.457Z" itemprop="datePublished">2018-05-05</time>
 </a>
     </div>
   
@@ -345,90 +287,140 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/mysql数据库基础(一)/">MYSQL数据库基础(一)</a>
-    </h1>
-  
-
-      </header>
+    <div class="article-entry" itemprop="articleBody">
       
+          
+        <h1 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h1><p>适配器模式是用于适配新旧接口不一致的情况，目标接口和系统现有的接口不同，而当前系统由需要使用新的接口，而不需要去改变原来接口和代码的设计。</p>
+<h1 id="适用方式"><a href="#适用方式" class="headerlink" title="适用方式"></a>适用方式</h1><p>适用于在后期维护和扩展使用，不适合前期开发设计时使用。</p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// old interface on system</span><br><span class="line">public class Adaptee &#123;</span><br><span class="line">		public int source(int a, int b, int c, int d)&#123;</span><br><span class="line">				return a + b + c + d;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// new interface that we need</span><br><span class="line">interface Target &#123;</span><br><span class="line">		int newsource(int a, int b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// adapter is used adapt old interface and new interface</span><br><span class="line">class Adapter implements Target&#123;</span><br><span class="line"></span><br><span class="line">		private Adaptee adaptee;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public int newsource(int a, int b) &#123;</span><br><span class="line">				adaptee = new Adaptee();</span><br><span class="line">				return adaptee.source(a, b, 0, 0);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class AdapterTest&#123;</span><br><span class="line">		public static void main(String[] args)&#123;</span><br><span class="line">				Adapter adapter = new Adapter();</span><br><span class="line">				int result = adapter.newsource(2, 3);</span><br><span class="line">				System.out.println(result);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Python-生成器、闭包、装饰器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/05/Python-生成器、闭包、装饰器/" class="article-date">
+      <time datetime="2018-05-05T11:18:17.876Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
     
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ul>
-<li>表操作</li>
-<li>约束</li>
-<li>数据操作</li>
-<li>查询</li>
-<li>表分类</li>
+        <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><ol>
+<li>interable object</li>
+</ol>
+<ul>
+<li>字符串</li>
+<li>列表</li>
+<li>元祖</li>
+<li>字典</li>
+<li>set</li>
+<li>str</li>
 </ul>
-<p>###一、 表操作</p>
-<pre><code>1.创建数据库
-  CREATE DATABASE mydb CHARACTER SET utf8;
-2.创建数据表
-  CREATE TABLE IF NOT EXISTS person(
-   person_id SMALLINT UNSIGNED,
-   fname VARCHAR(30),
-   lname VARCHAR(20),
-   genter ENUM(&apos;M&apos;,&apos;f&apos;),
-   CONSTRAINT pk_person PRIMARY KEY(person_id));
+<ol>
+<li>list-generator</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">In [6]: a = [x for x in range(5)]</span><br><span class="line">In [7]: a</span><br><span class="line">Out[7]: [0, 1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>generator object</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">In [11]: a = (x for x in range(5))</span><br><span class="line"></span><br><span class="line">In [12]: a</span><br><span class="line">Out[12]: &lt;generator object &lt;genexpr&gt; at 0x7fb342785308&gt;</span><br><span class="line"></span><br><span class="line">In [13]: for v in a:</span><br><span class="line">   ....:     print(v)</span><br><span class="line">   ....:</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+<ol>
+<li>判断是否可迭代</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">In [18]: from collections import Iterable</span><br><span class="line"></span><br><span class="line">In [19]: isinstance(&quot;abcd&quot;, Iterable)</span><br><span class="line">Out[19]: True</span><br><span class="line"></span><br><span class="line">In [20]: isinstance(100, Iterable)</span><br><span class="line">Out[20]: False</span><br></pre></td></tr></table></figure>
+<ol>
+<li>函数</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">In [21]: def test():</span><br><span class="line">   ....:     print(&apos;....&apos;)</span><br><span class="line">   ....:</span><br><span class="line"></span><br><span class="line">In [22]: test()   # 调用函数</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">In [23]: test  # 只是函数的引用</span><br><span class="line">Out[23]: &lt;function __main__.test&gt;</span><br><span class="line"></span><br><span class="line">In [24]: b = test # 让a具有函数test()引用的能力</span><br><span class="line"></span><br><span class="line">In [25]: b</span><br><span class="line">Out[25]: &lt;function __main__.test&gt;</span><br><span class="line"></span><br><span class="line">In [32]: b = test</span><br><span class="line"></span><br><span class="line">In [33]: b() # b 具有引用函数test()能力，可以直接调用函数test()</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">In [26]: b = test()</span><br><span class="line">....</span><br><span class="line"></span><br><span class="line">In [27]: b</span><br></pre></td></tr></table></figure>
+<ol>
+<li>闭包<br>类似内部类的使用，但是闭包针对函数，在函数内部定义子函数,子函数使用父函数的变量<br>interpreter</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">----------input-------------</span><br><span class="line">def test(number):</span><br><span class="line">    print(&apos;1....&apos;)</span><br><span class="line">    def test_in():</span><br><span class="line">        print(&apos;2.....&apos;)</span><br><span class="line">        print(number+200)</span><br><span class="line">    print(&apos;3....&apos;)</span><br><span class="line">    return test_in</span><br><span class="line"></span><br><span class="line">a = test(100)</span><br><span class="line">a()</span><br><span class="line"></span><br><span class="line">----------output----------</span><br></pre></td></tr></table></figure>
 
-  CREATE TABLE IF NOT EXISTS favorate_food(
-   person_id SMALLINT UNSIGNED,
-   food VARCHAR(30),
-   CONSTRAINT pk_per_food PRIMARY KEY(person_id,food),
-   CONSTRAINT fk_food_fav_per FOREIGN KEY (person_id) REFERENCES person(person_id));
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
 
-   例如：
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
 
-   mysql&gt; CREATE TABLE IF NOT EXISTS transaction(
- -&gt; txn_id INTEGER UNSIGNED,
- -&gt; txn_date DATETIME,
- -&gt; account_id INTEGER UNSIGNED,
- -&gt; txn_type_cd VARCHAR(10),
- -&gt; amount DOUBLE(10,2),
- -&gt; teller_emp_id SMALLINT UNSIGNED,
- -&gt; execution_branch_id SMALLINT UNSIGNED,
- -&gt; funds_avail_date DATETIME,
- -&gt; CONSTRAINT PRIMARY KEY(txn_id),
- -&gt; FOREIGN KEY(account_id) REFERENCES account(account_id),
- -&gt; FOREIGN KEY(teller_emp_id) REFERENCES employee(emp_id),
- -&gt; FOREIGN KEY(execution_branch_id) REFERENCES branch(branch_id));
-Query OK, 0 rows affected (0.04 sec)        
 
-3.修改表字段
-  ALTER TABLE person MOFIDY person_id SMALLINT UNSIGNED AUTO_INCREMENT;
- 4.删除表
-  DROP TABLE person;
-</code></pre><h3 id="二、约束-constraint"><a href="#二、约束-constraint" class="headerlink" title="二、约束(constraint)"></a>二、约束(constraint)</h3><pre><code>1.主键约束(PRIMARY KEY)
-  CONSTRAINT pk_person PRIMARY KEY(person_id)
-2.外键约束(FOREIGN KEY(...) REFERENCES table(...))
-  CONSTRAINT fk_fav_per FOREIGN KEY(person_id) REFERENCES person(person_id);
-3.检查约束之枚举(ENUM)
-  genter ENUM(&apos;M&apos;,&apos;F&apos;)
-</code></pre><h3 id="三、数据操作"><a href="#三、数据操作" class="headerlink" title="三、数据操作"></a>三、数据操作</h3><pre><code>1.插入
- INSERT INTO person(person_id,fname,lname,genter) 
- VALUES(null,&apos;Smis&apos;,&apos;Zh&apos;,&apos;F&apos;);
-2.更新
- UPDATE person SET fname = &apos;SSS&apos;,lname=&apos;miei&apos; WHERE person_id = 1;
-3.删除
-     DELETE FROM person WHERE person_id = 1;
-4.查询
-</code></pre><h3 id="四、查询入门"><a href="#四、查询入门" class="headerlink" title="四、查询入门"></a>四、查询入门</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1.查询机制</span><br><span class="line">每当查询被发送到服务器端时，服务器在执行语句之前会进行如下检查：</span><br><span class="line">(1)用户是否有权限执行该语句</span><br><span class="line">(2)用户是否有权限访问目标数据库</span><br><span class="line">(3)语句语法是否正确</span><br><span class="line">如果通过了检查，语句就会被传递给查询优化器，它负责为查询找到最有效率的执行方式。</span><br><span class="line">当服务器执行完查询后，就会向调用程序返回一个结果集。</span><br><span class="line"></span><br><span class="line">2.查询语句</span><br><span class="line">字句：select,from,where,group by,having,order by.</span><br><span class="line">(1)select : select 字句中可以加入 字符、表达式、函数等。</span><br><span class="line">(2)distinct : 可以去除重复的行。</span><br><span class="line">(3)from : from字句定义了查询中使用的表，以及连接这些表的方式。</span><br><span class="line">1].临时表：</span><br><span class="line">select e.emp_id ,e.fname from (select * from employee) e where e.emp_id &gt; 2;</span><br><span class="line">(4)where : 对结果集进行筛选。</span><br><span class="line">(5)group by : 根据列值对数据进行分组。</span><br><span class="line">(6)having : 对分组数据进行过滤。</span><br><span class="line">(7)order by: 对结果集中的原始列数据或是根据列值数据计算的表达式结果进行排序。默认为升序（ASC），降序为（DESC）。还可以根据表达式排序。</span><br></pre></td></tr></table></figure>
-<h3 id="五、表的分类"><a href="#五、表的分类" class="headerlink" title="五、表的分类"></a>五、表的分类</h3><ol>
-<li><p>永久表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">永久表：采用  create table 来创建的表</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>临时表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">临时表：子查询返回的表</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>虚拟表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">虚拟表：使用 create view 创建的视图,它的行为表现得像一个表,但实际上并不拥有任何数据，当发出一个对视图的查询时，该查询会被绑定到视图定义上，以产生最终被执行的查询。</span><br><span class="line"></span><br><span class="line">创建虚拟表：</span><br><span class="line">create view employee_vw as select emp_id,fname,lname, YEAR(start_date) start_year from employee;</span><br><span class="line">使用虚拟表：</span><br><span class="line">select emp_id,start_year from employee_vw;</span><br></pre></td></tr></table></figure>
-</li>
+
+
+
+
+
+
+
+  
+    <article id="post-Java 虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/05/Java 虚拟机/" class="article-date">
+      <time datetime="2018-05-05T11:18:10.189Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="虚拟机模型"><a href="#虚拟机模型" class="headerlink" title="虚拟机模型"></a>虚拟机模型</h1><p><img src="https://note.youdao.com/favicon.ico" alt="image"></p>
+<ol>
+<li>类加载子系统<br>负责从文件系统或者网络中加载Class 信息(.class文件)，加载的信息存放到方法区中。</li>
+<li>方法区<br>方法区用于存放类信息、常量信息、常量池信息、字符串字面量和数字常量等。</li>
+<li>java堆<br>java虚拟机在启动的时候会建立java堆，这个java堆就是程序主要的内存工作区域，用于存放对象实例，堆空间是所有线程共享的区域。</li>
+<li>直接内存<br>用于提高性能的区域，直接内存的速度优于java堆，适合读写频繁的场合，e.g. Java的NIO库允许java程序使用直接内存。</li>
+<li>java栈<br>每个虚拟机线程都有一个私有的栈，在创建线程的时候，会创建一个私有栈，这个java私有栈中存放局部变量、方法参数、方法调用和方法返回值等。</li>
+<li>本地方法栈<br>本地方法栈用于本地方法调用，java虚拟机允许java直接调用本地方法(c,c++)</li>
+<li>垃圾收集系统<br>java 有一套完善的垃圾收集机制，用于回收无用对象、变量等</li>
+<li>PC寄存器<br>PC寄存器是每个线程私有的空间，用于记录当前执行环境指针、程序计数器、操作栈指针、变量指针等。</li>
+<li>执行引擎<br>执行引擎负责虚拟机的字节码编译成机器码并执行。</li>
 </ol>
 
       
@@ -457,11 +449,11 @@ Query OK, 0 rows affected (0.04 sec)
 
 
   
-    <article id="post-java interview" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Python-装饰器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/20/java interview/" class="article-date">
-      <time datetime="2018-04-20T15:20:48.262Z" itemprop="datePublished">2018-04-20</time>
+      <a href="/2018/05/05/Python-装饰器/" class="article-date">
+      <time datetime="2018-05-05T11:17:36.284Z" itemprop="datePublished">2018-05-05</time>
 </a>
     </div>
   
@@ -470,148 +462,28 @@ Query OK, 0 rows affected (0.04 sec)
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/java interview/">java 面试总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="数据库设计三范式"><a href="#数据库设计三范式" class="headerlink" title="数据库设计三范式"></a>数据库设计三范式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 范式可以避免数据冗余，减少数据库的存储空间，减轻维护数据完整性的麻烦，但是操作困难，因为需要联系多个表才能得到需要的数据，而且范式越高性能越差。</span><br><span class="line">2. 1NF：如果关系模式R的每个关系r的属性都是不可分的数据项，那么就称R是第一个范式模式，（每个属性都是原子项，不可分割）。</span><br><span class="line">3. 2NF：首先满足第一范式，其次每个非主属性要完全依赖与候选键，或者是主键。（完全依赖，没有部分依赖）</span><br><span class="line">4. 3NF：首先满足第二范式，其次非主属性之间不存在函数依赖。（没有传递依赖）</span><br></pre></td></tr></table></figure>
-<h2 id="数据库事务同步"><a href="#数据库事务同步" class="headerlink" title="数据库事务同步"></a>数据库事务同步</h2><h2 id="spring中如何使用事务（-Transactional-参数）"><a href="#spring中如何使用事务（-Transactional-参数）" class="headerlink" title="spring中如何使用事务（@Transactional 参数）"></a>spring中如何使用事务（@Transactional 参数）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1. @Transactional 注解可以被应用于接口定义和接口方法、类定义和类的 public 方法上。</span><br><span class="line">2. @Transactional 注解只能应用到 public 可见度的方法上。 如果你在 protected、private 或者 package-visible 的方法上使用 @Transactional 注解，它也不会报错， 但是这个被注解的方法将不会展示已配置的事务设置。</span><br><span class="line">3. 可 以采用propagation这个事务属性 @Transactional(propagation=Propagation.NOT_SUPPORTED)，propagation这个属性指定了 事务传播行为，我们可以指定它不支持事务，当我们这么写了之后，Spring容器在getPersons方法执行前就不会开启事务.</span><br><span class="line"></span><br><span class="line">    @Transactional</span><br><span class="line">    public class PersonServiceBean implements PersonService &#123;</span><br><span class="line">    @Transactional(propagation=Propagation.NOT_SUPPORTED)</span><br><span class="line">    //则此方法 就不会开启事务了</span><br><span class="line"></span><br><span class="line">    public Person getPerson(Integer personid)</span><br><span class="line">    &#123;&#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">@Trancational</span><br><span class="line">value:修饰作用</span><br><span class="line">readOnly:读写事务</span><br><span class="line">propagation:传播行为</span><br></pre></td></tr></table></figure>
-<h2 id="java-使用枚举的好处"><a href="#java-使用枚举的好处" class="headerlink" title="java 使用枚举的好处"></a>java 使用枚举的好处</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 对于编程是安全的</span><br><span class="line">2. 拥有更好的可读性，运行效率高</span><br><span class="line">3. 枚举可以提供方便的操作，例如替代查找</span><br></pre></td></tr></table></figure>
-<h2 id="常见的异常以及如何处理异常"><a href="#常见的异常以及如何处理异常" class="headerlink" title="常见的异常以及如何处理异常"></a>常见的异常以及如何处理异常</h2><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h2 id="即时通信中如何解决消息的分发（单聊、群聊"><a href="#即时通信中如何解决消息的分发（单聊、群聊" class="headerlink" title="即时通信中如何解决消息的分发（单聊、群聊"></a>即时通信中如何解决消息的分发（单聊、群聊</h2><h2 id="线程的使用"><a href="#线程的使用" class="headerlink" title="线程的使用"></a>线程的使用</h2><h2 id="类加载顺序"><a href="#类加载顺序" class="headerlink" title="类加载顺序"></a>类加载顺序</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 父类静态代码块</span><br><span class="line">2. 子类静态代码块</span><br><span class="line">3. 父类代码块</span><br><span class="line">4. 父类构造方法</span><br><span class="line">5. 子类代码块</span><br><span class="line">6. 子类构造方法</span><br></pre></td></tr></table></figure>
-<h2 id="反生死锁的原因"><a href="#反生死锁的原因" class="headerlink" title="反生死锁的原因"></a>反生死锁的原因</h2><h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2>
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/20/hello-world/" class="article-date">
-      <time datetime="2018-04-20T15:20:48.261Z" itemprop="datePublished">2018-04-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-github博客发布失败" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/20/github博客发布失败/" class="article-date">
-      <time datetime="2018-04-20T15:20:48.260Z" itemprop="datePublished">2018-04-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/github博客发布失败/">github博客发布失败</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><em>ssh: Could not resolve hostname https: Name or service not known<br>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights<br>and the repository exists.<br>FATAL Something’s wrong. Maybe you can find the solution here: <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">http://hexo.io/docs/troubleshooting.html</a><br>Error: ssh: Could not resolve hostname https: Name or service not known<br>fatal: Could not read from remote repository.</em></p>
+        <h1 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h1><ul>
+<li><strong>new</strong><br>创建对象的时候会调用</li>
+<li><strong>init</strong></li>
+<li><strong>del</strong><br>删除实例</li>
+<li><strong>str</strong><br>打印对象字符串</li>
+<li><strong>repr</strong><br>打印对象字符串（更接近人性化）</li>
+<li><strong>call</strong></li>
+<li><strong>class</strong><br>显示这个对象是通过哪个类来创建的</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">In [6]: class Test(object):</span><br><span class="line">   ...:     def __call__(self):</span><br><span class="line">   ...:         print(&quot;---test---&quot;)</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [7]: t = Test()</span><br><span class="line"></span><br><span class="line">In [8]: t() # 可以通过对象实例来调用class 中的__call__()方法，是自动执行的。</span><br><span class="line">---test---</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>出现的问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1.首先提交博客：</span><br><span class="line">hexo g # 重新生成blog</span><br><span class="line">hexo d # 将本地blog提交到github仓库</span><br><span class="line"></span><br><span class="line">2.出现异常</span><br><span class="line"></span><br><span class="line">----------</span><br><span class="line">	INFO  Deploying: git</span><br><span class="line">	INFO  Clearing .deploy_git folder...</span><br><span class="line">	INFO  Copying files from public folder...</span><br><span class="line">	INFO  Copying files from extend dirs...</span><br><span class="line">	On branch master</span><br><span class="line">	nothing to commit, working tree clean</span><br><span class="line">	ssh: Could not resolve hostname https: Name or service not known</span><br><span class="line">	fatal: Could not read from remote repository.</span><br><span class="line">	</span><br><span class="line">	Please make sure you have the correct access rights</span><br><span class="line">	and the repository exists.</span><br><span class="line">	FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">	Error: ssh: Could not resolve hostname https: Name or service not known</span><br><span class="line">	fatal: Could not read from remote repository.</span><br><span class="line">	</span><br><span class="line">	Please make sure you have the correct access rights</span><br><span class="line">	and the repository exists.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (E:\GitHub\node\Install\blog\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at ChildProcess.emit (events.js:159:13)</span><br><span class="line">    at ChildProcess.cp.emit (E:\GitHub\node\Install\blog\node_modules\cross-spawn\lib\enoent.js:40:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:943:16)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)</span><br><span class="line"></span><br><span class="line">----------</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解决方案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">修改配置文件：根目录下的_config.yml，修改deploy节点。原来的配置为：deploy:   type: git   repo: https://github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git   branch: master修改为如下：deploy:    type: git   repo: https://&#123;yourname&#125;:&#123;yourpassword&#125;@github.com/&#123;yourname&#125;/&#123;yourname&#125;.github.io.git   branch: master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">----------</span><br><span class="line">成功提交：</span><br><span class="line">$ hexo d</span><br><span class="line">INFO  Deploying: git</span><br><span class="line">INFO  Clearing .deploy_git folder...</span><br><span class="line">INFO  Copying files from public folder...</span><br><span class="line">INFO  Copying files from extend dirs...</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line">Branch &apos;master&apos; set up to track remote branch &apos;master&apos; from &apos;https://daxiongit:sunyanxiong814@github.com/daxiongit/daxiongit.github.io.git&apos;.</span><br><span class="line">To https://github.com/daxiongit/daxiongit.github.io.git</span><br><span class="line"> + fdb0156...47f18fd HEAD -&gt; master (forced update)</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure></li>
+<li><strong>slots</strong> (property)</li>
+</ul>
+<h1 id="装饰器-decorator"><a href="#装饰器-decorator" class="headerlink" title="装饰器(decorator)"></a>装饰器(decorator)</h1><ul>
+<li>类装饰器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">In [9]: class Decorator(object):</span><br><span class="line">   ...:     def __init__(self, func):</span><br><span class="line">   ...:         print(&quot;init....&quot;)</span><br><span class="line">   ...:         print(&quot;init &amp; this func is %s&quot;%func.__name__)</span><br><span class="line">   ...:         self.__func = func</span><br><span class="line">   ...:     def __call__(self, number):</span><br><span class="line">   ...:         print(&quot;--decorator function...&quot;)</span><br><span class="line">   ...:         print(&quot;--decorator parameter number is %d&quot;%number)</span><br><span class="line">   ...:         self.__func()</span><br><span class="line">   ...:</span><br><span class="line"></span><br><span class="line">In [10]: @Decorator  # 此处用类来装饰函数func(),当python interpreter 执行到这里时，首先会创建一个Decorator的对象，创建这个对象的时候会执行__init__()函数，同时将函数func()当做参数传入到__init__()函数中。在装饰器创建对象的时候将对象的引用返回了，这里返回的信息保存到func，相当于func = Decorator()，当调用func()时，相当于调用了函数__call(number)函数，并传入参数12,因此输入值如下所示：</span><br><span class="line">   ....: def func():</span><br><span class="line">   ....:     print(&quot;this is actually function...&quot;)</span><br><span class="line">   ....:</span><br><span class="line">init....</span><br><span class="line">init &amp; this func is func</span><br><span class="line"></span><br><span class="line">In [11]: func(12)</span><br><span class="line">--decorator function...</span><br><span class="line">--decorator parameter number is 12</span><br><span class="line">this is actually function...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数装饰器</li>
 </ul>
 
       
@@ -642,7 +514,7 @@ Query OK, 0 rows affected (0.04 sec)
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
